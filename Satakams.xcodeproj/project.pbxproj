@@ -21,6 +21,13 @@
 		18ECA84417FCB16D00C930FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82617FCB16D00C930FE /* UIKit.framework */; };
 		18ECA84C17FCB16D00C930FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18ECA84A17FCB16D00C930FE /* InfoPlist.strings */; };
 		18ECA84E17FCB16D00C930FE /* SatakamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECA84D17FCB16D00C930FE /* SatakamsTests.m */; };
+		82021DB617FDF11B0065F7A4 /* FTFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB517FDF11B0065F7A4 /* FTFrontViewController.m */; };
+		82021DB917FDF12E0065F7A4 /* FTLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB817FDF12E0065F7A4 /* FTLeftViewController.m */; };
+		82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */; };
+		82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */; };
+		82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */; };
+		82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */; };
+		B9265BE4956F4FF387FC8F2D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BEEFC72C6443568C0215B4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,16 @@
 		18ECA84917FCB16D00C930FE /* SatakamsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SatakamsTests-Info.plist"; sourceTree = "<group>"; };
 		18ECA84B17FCB16D00C930FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18ECA84D17FCB16D00C930FE /* SatakamsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SatakamsTests.m; sourceTree = "<group>"; };
+		63BEEFC72C6443568C0215B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		82021DB417FDF11B0065F7A4 /* FTFrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFrontViewController.h; sourceTree = "<group>"; };
+		82021DB517FDF11B0065F7A4 /* FTFrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFrontViewController.m; sourceTree = "<group>"; };
+		82021DB717FDF12E0065F7A4 /* FTLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLeftViewController.h; sourceTree = "<group>"; };
+		82021DB817FDF12E0065F7A4 /* FTLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLeftViewController.m; sourceTree = "<group>"; };
+		82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_landscape.png; sourceTree = "<group>"; };
+		82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_landscape@2x.png"; sourceTree = "<group>"; };
+		82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_portrait.png; sourceTree = "<group>"; };
+		82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_portrait@2x.png"; sourceTree = "<group>"; };
+		AC5BC34864C04657A83DC151 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +80,7 @@
 				18ECA82517FCB16D00C930FE /* CoreGraphics.framework in Frameworks */,
 				18ECA82717FCB16D00C930FE /* UIKit.framework in Frameworks */,
 				18ECA82317FCB16D00C930FE /* Foundation.framework in Frameworks */,
+				B9265BE4956F4FF387FC8F2D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +104,7 @@
 				18ECA84717FCB16D00C930FE /* SatakamsTests */,
 				18ECA82117FCB16D00C930FE /* Frameworks */,
 				18ECA82017FCB16D00C930FE /* Products */,
+				AC5BC34864C04657A83DC151 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +124,7 @@
 				18ECA82417FCB16D00C930FE /* CoreGraphics.framework */,
 				18ECA82617FCB16D00C930FE /* UIKit.framework */,
 				18ECA84117FCB16D00C930FE /* XCTest.framework */,
+				63BEEFC72C6443568C0215B4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +132,7 @@
 		18ECA82817FCB16D00C930FE /* Satakams */ = {
 			isa = PBXGroup;
 			children = (
+				82021DBA17FDF4930065F7A4 /* Images */,
 				18ECA83117FCB16D00C930FE /* FTAppDelegate.h */,
 				18ECA83217FCB16D00C930FE /* FTAppDelegate.m */,
 				18ECA83417FCB16D00C930FE /* Main.storyboard */,
@@ -119,6 +140,10 @@
 				18ECA83817FCB16D00C930FE /* FTViewController.m */,
 				18ECA83A17FCB16D00C930FE /* Images.xcassets */,
 				18ECA82917FCB16D00C930FE /* Supporting Files */,
+				82021DB417FDF11B0065F7A4 /* FTFrontViewController.h */,
+				82021DB517FDF11B0065F7A4 /* FTFrontViewController.m */,
+				82021DB717FDF12E0065F7A4 /* FTLeftViewController.h */,
+				82021DB817FDF12E0065F7A4 /* FTLeftViewController.m */,
 			);
 			path = Satakams;
 			sourceTree = "<group>";
@@ -152,6 +177,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		82021DBA17FDF4930065F7A4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */,
+				82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */,
+				82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */,
+				82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18ECA85117FCB16D00C930FE /* Build configuration list for PBXNativeTarget "Satakams" */;
 			buildPhases = (
+				9A93220EA08846E4A2C2B0E8 /* Check Pods Manifest.lock */,
 				18ECA81B17FCB16D00C930FE /* Sources */,
 				18ECA81C17FCB16D00C930FE /* Frameworks */,
 				18ECA81D17FCB16D00C930FE /* Resources */,
+				2D82C696B6534F068DE04B42 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +267,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */,
 				18ECA83B17FCB16D00C930FE /* Images.xcassets in Resources */,
+				82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */,
 				18ECA82D17FCB16D00C930FE /* InfoPlist.strings in Resources */,
+				82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */,
 				18ECA83617FCB16D00C930FE /* Main.storyboard in Resources */,
+				82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,12 +287,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D82C696B6534F068DE04B42 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A93220EA08846E4A2C2B0E8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18ECA81B17FCB16D00C930FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82021DB617FDF11B0065F7A4 /* FTFrontViewController.m in Sources */,
 				18ECA83317FCB16D00C930FE /* FTAppDelegate.m in Sources */,
+				82021DB917FDF12E0065F7A4 /* FTLeftViewController.m in Sources */,
 				18ECA82F17FCB16D00C930FE /* main.m in Sources */,
 				18ECA83917FCB16D00C930FE /* FTViewController.m in Sources */,
 			);
@@ -376,6 +453,7 @@
 		};
 		18ECA85217FCB16D00C930FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC5BC34864C04657A83DC151 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +467,7 @@
 		};
 		18ECA85317FCB16D00C930FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC5BC34864C04657A83DC151 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -461,6 +540,7 @@
 				18ECA85317FCB16D00C930FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18ECA85417FCB16D00C930FE /* Build configuration list for PBXNativeTarget "SatakamsTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +549,7 @@
 				18ECA85617FCB16D00C930FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

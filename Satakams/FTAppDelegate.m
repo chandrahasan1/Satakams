@@ -7,12 +7,24 @@
 //
 
 #import "FTAppDelegate.h"
+#import "PKRevealController.h"
+#import "FTFrontViewController.h"
+#import "FTLeftViewController.h"
+
 
 @implementation FTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Step 1: Create your controllers.
+    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FTFrontViewController alloc] init]];
+    UIViewController *leftViewController = [[FTLeftViewController alloc] init];
+    self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController leftViewController:leftViewController options:nil];
+    self.window.rootViewController = self.revealController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
