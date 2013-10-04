@@ -21,7 +21,8 @@
     // Step 1: Create your controllers.
     UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FTFrontViewController alloc] init]];
     UIViewController *leftViewController = [[FTLeftViewController alloc] init];
-    self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController leftViewController:leftViewController options:nil];
+    UINavigationController *leftNavController = [[UINavigationController alloc] initWithRootViewController:leftViewController];
+    self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController leftViewController:leftNavController options:nil];
     self.window.rootViewController = self.revealController;
     [self.window makeKeyAndVisible];
     

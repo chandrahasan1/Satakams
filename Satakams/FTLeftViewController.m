@@ -9,6 +9,7 @@
 #import "FTLeftViewController.h"
 #import "PKRevealController.h"
 #import "FTFrontViewController.h"
+#import "FTAppDelegate.h"
 
 @interface FTLeftViewController ()
 
@@ -29,6 +30,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Satakams";
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -68,13 +71,14 @@
     return cell;
 }
 
-
+ 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Not sure about this logic of sending messages between controllers.
-    UINavigationController *nagivationController = (UINavigationController *)self.revealController.frontViewController;
+    FTAppDelegate *appDelegate = (FTAppDelegate *)[[UIApplication sharedApplication] delegate];
+    UINavigationController *nagivationController = (UINavigationController *)appDelegate.revealController.frontViewController;
     FTFrontViewController *frontViewController = (FTFrontViewController *)[nagivationController.viewControllers objectAtIndex:0];
     [frontViewController setCellPrefix:[NSString stringWithFormat:@"%d", indexPath.row]];
-    [self.revealController showViewController:self.revealController.frontViewController];
+    [appDelegate.revealController showViewController:nagivationController];
 }
 
 /*
