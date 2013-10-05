@@ -8,9 +8,9 @@
 
 #define DATABASE_FILE_NAME @"ft.satakam.database.sqlite"
 
-#define CREATE_SATAKAMS_TABLE @"CREATE TABLE SATAKAMS(SID int, Name varchar(255), Bio varchar(255) , PRIMARY KEY (SID));"
-#define CREATE_POEMS_TABLE @"CREATE TABLE POEMS(PoemsID int, Verse varchar(255), Meaning varchar(255), AudioFile varchar(255), SID int, faved BOOLEAN, FOREIGN KEY (SID) REFERENCES SATAKAMS(SID), PRIMARY KEY (PoemsID));"
-#define CREATE_POETS_TABLE @"CREATE TABLE POETS(PoetsID int, Name varchar(255), Bio varchar(255), SID int, FOREIGN KEY (SID) REFERENCES SATAKAMS(SID), PRIMARY KEY (PoetsID));"
+#define CREATE_SATAKAMS_TABLE @"CREATE TABLE IF NOT EXISTS SATAKAMS(SID int, Name varchar(255), Bio varchar(255) , PRIMARY KEY (SID));"
+#define CREATE_POEMS_TABLE @"CREATE TABLE IF NOT EXISTS POEMS(PoemsID int, Verse varchar(255), Meaning varchar(255), AudioFile varchar(255), SID int, faved BOOLEAN, FOREIGN KEY (SID) REFERENCES SATAKAMS(SID), PRIMARY KEY (PoemsID));"
+#define CREATE_POETS_TABLE @"CREATE TABLE IF NOT EXISTS POETS(PoetsID int, Name varchar(255), Bio varchar(255), SID int, FOREIGN KEY (SID) REFERENCES SATAKAMS(SID), PRIMARY KEY (PoetsID));"
 
 
 #import "FTDatabaseWrapper.h"
