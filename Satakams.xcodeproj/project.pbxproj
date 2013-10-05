@@ -28,6 +28,7 @@
 		82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */; };
 		82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */; };
 		82021DC4180061650065F7A4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82021DC3180061650065F7A4 /* libsqlite3.0.dylib */; };
+		82021DC718006E180065F7A4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DC618006E180065F7A4 /* FTDatabaseWrapper.m */; };
 		B9265BE4956F4FF387FC8F2D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BEEFC72C6443568C0215B4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_portrait.png; sourceTree = "<group>"; };
 		82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_portrait@2x.png"; sourceTree = "<group>"; };
 		82021DC3180061650065F7A4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		82021DC518006E180065F7A4 /* FTDatabaseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTDatabaseWrapper.h; sourceTree = "<group>"; };
+		82021DC618006E180065F7A4 /* FTDatabaseWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTDatabaseWrapper.m; sourceTree = "<group>"; };
 		AC5BC34864C04657A83DC151 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +151,8 @@
 				82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */,
 				82021DB717FDF12E0065F7A4 /* FTMenuViewController.h */,
 				82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */,
+				82021DC518006E180065F7A4 /* FTDatabaseWrapper.h */,
+				82021DC618006E180065F7A4 /* FTDatabaseWrapper.m */,
 			);
 			path = Satakams;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 			files = (
 				82021DB617FDF11B0065F7A4 /* FTPoemsViewController.m in Sources */,
 				18ECA83317FCB16D00C930FE /* FTAppDelegate.m in Sources */,
+				82021DC718006E180065F7A4 /* FTDatabaseWrapper.m in Sources */,
 				82021DB917FDF12E0065F7A4 /* FTMenuViewController.m in Sources */,
 				18ECA82F17FCB16D00C930FE /* main.m in Sources */,
 				18ECA83917FCB16D00C930FE /* FTViewController.m in Sources */,
