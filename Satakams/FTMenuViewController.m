@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 FT. All rights reserved.
 //
 
-#import "FTLeftViewController.h"
+#import "FTMenuViewController.h"
 #import "PKRevealController.h"
-#import "FTFrontViewController.h"
+#import "FTPoemsViewController.h"
 #import "FTAppDelegate.h"
 
-@interface FTLeftViewController ()
+@interface FTMenuViewController ()
 
 @end
 
-@implementation FTLeftViewController
+@implementation FTMenuViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -76,7 +76,7 @@
     // TODO: Not sure about this logic of sending messages between controllers.
     FTAppDelegate *appDelegate = (FTAppDelegate *)[[UIApplication sharedApplication] delegate];
     UINavigationController *nagivationController = (UINavigationController *)appDelegate.revealController.frontViewController;
-    FTFrontViewController *frontViewController = (FTFrontViewController *)[nagivationController.viewControllers objectAtIndex:0];
+    FTPoemsViewController *frontViewController = (FTPoemsViewController *)[nagivationController.viewControllers objectAtIndex:0];
     [frontViewController setCellPrefix:[NSString stringWithFormat:@"%d", indexPath.row]];
     [appDelegate.revealController showViewController:nagivationController];
 }

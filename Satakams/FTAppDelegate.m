@@ -8,8 +8,8 @@
 
 #import "FTAppDelegate.h"
 #import "PKRevealController.h"
-#import "FTFrontViewController.h"
-#import "FTLeftViewController.h"
+#import "FTPoemsViewController.h"
+#import "FTMenuViewController.h"
 
 
 @implementation FTAppDelegate
@@ -19,8 +19,8 @@
     // Override point for customization after application launch.
      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Step 1: Create your controllers.
-    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FTFrontViewController alloc] init]];
-    UIViewController *leftViewController = [[FTLeftViewController alloc] init];
+    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FTPoemsViewController alloc] init]];
+    UIViewController *leftViewController = [[FTMenuViewController alloc] init];
     UINavigationController *leftNavController = [[UINavigationController alloc] initWithRootViewController:leftViewController];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController leftViewController:leftNavController options:nil];
     self.window.rootViewController = self.revealController;

@@ -21,12 +21,13 @@
 		18ECA84417FCB16D00C930FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82617FCB16D00C930FE /* UIKit.framework */; };
 		18ECA84C17FCB16D00C930FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18ECA84A17FCB16D00C930FE /* InfoPlist.strings */; };
 		18ECA84E17FCB16D00C930FE /* SatakamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECA84D17FCB16D00C930FE /* SatakamsTests.m */; };
-		82021DB617FDF11B0065F7A4 /* FTFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB517FDF11B0065F7A4 /* FTFrontViewController.m */; };
-		82021DB917FDF12E0065F7A4 /* FTLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB817FDF12E0065F7A4 /* FTLeftViewController.m */; };
+		82021DB617FDF11B0065F7A4 /* FTPoemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */; };
+		82021DB917FDF12E0065F7A4 /* FTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */; };
 		82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */; };
 		82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */; };
 		82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */; };
 		82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */; };
+		82021DC4180061650065F7A4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82021DC3180061650065F7A4 /* libsqlite3.0.dylib */; };
 		B9265BE4956F4FF387FC8F2D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BEEFC72C6443568C0215B4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,14 +62,15 @@
 		18ECA84B17FCB16D00C930FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18ECA84D17FCB16D00C930FE /* SatakamsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SatakamsTests.m; sourceTree = "<group>"; };
 		63BEEFC72C6443568C0215B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		82021DB417FDF11B0065F7A4 /* FTFrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTFrontViewController.h; sourceTree = "<group>"; };
-		82021DB517FDF11B0065F7A4 /* FTFrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTFrontViewController.m; sourceTree = "<group>"; };
-		82021DB717FDF12E0065F7A4 /* FTLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLeftViewController.h; sourceTree = "<group>"; };
-		82021DB817FDF12E0065F7A4 /* FTLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLeftViewController.m; sourceTree = "<group>"; };
+		82021DB417FDF11B0065F7A4 /* FTPoemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsViewController.h; sourceTree = "<group>"; };
+		82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsViewController.m; sourceTree = "<group>"; };
+		82021DB717FDF12E0065F7A4 /* FTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMenuViewController.h; sourceTree = "<group>"; };
+		82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMenuViewController.m; sourceTree = "<group>"; };
 		82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_landscape.png; sourceTree = "<group>"; };
 		82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_landscape@2x.png"; sourceTree = "<group>"; };
 		82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_portrait.png; sourceTree = "<group>"; };
 		82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_portrait@2x.png"; sourceTree = "<group>"; };
+		82021DC3180061650065F7A4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		AC5BC34864C04657A83DC151 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82021DC4180061650065F7A4 /* libsqlite3.0.dylib in Frameworks */,
 				18ECA82517FCB16D00C930FE /* CoreGraphics.framework in Frameworks */,
 				18ECA82717FCB16D00C930FE /* UIKit.framework in Frameworks */,
 				18ECA82317FCB16D00C930FE /* Foundation.framework in Frameworks */,
@@ -120,6 +123,7 @@
 		18ECA82117FCB16D00C930FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82021DC3180061650065F7A4 /* libsqlite3.0.dylib */,
 				18ECA82217FCB16D00C930FE /* Foundation.framework */,
 				18ECA82417FCB16D00C930FE /* CoreGraphics.framework */,
 				18ECA82617FCB16D00C930FE /* UIKit.framework */,
@@ -140,10 +144,10 @@
 				18ECA83817FCB16D00C930FE /* FTViewController.m */,
 				18ECA83A17FCB16D00C930FE /* Images.xcassets */,
 				18ECA82917FCB16D00C930FE /* Supporting Files */,
-				82021DB417FDF11B0065F7A4 /* FTFrontViewController.h */,
-				82021DB517FDF11B0065F7A4 /* FTFrontViewController.m */,
-				82021DB717FDF12E0065F7A4 /* FTLeftViewController.h */,
-				82021DB817FDF12E0065F7A4 /* FTLeftViewController.m */,
+				82021DB417FDF11B0065F7A4 /* FTPoemsViewController.h */,
+				82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */,
+				82021DB717FDF12E0065F7A4 /* FTMenuViewController.h */,
+				82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */,
 			);
 			path = Satakams;
 			sourceTree = "<group>";
@@ -325,9 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82021DB617FDF11B0065F7A4 /* FTFrontViewController.m in Sources */,
+				82021DB617FDF11B0065F7A4 /* FTPoemsViewController.m in Sources */,
 				18ECA83317FCB16D00C930FE /* FTAppDelegate.m in Sources */,
-				82021DB917FDF12E0065F7A4 /* FTLeftViewController.m in Sources */,
+				82021DB917FDF12E0065F7A4 /* FTMenuViewController.m in Sources */,
 				18ECA82F17FCB16D00C930FE /* main.m in Sources */,
 				18ECA83917FCB16D00C930FE /* FTViewController.m in Sources */,
 			);

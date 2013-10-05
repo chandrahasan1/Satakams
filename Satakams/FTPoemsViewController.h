@@ -1,5 +1,5 @@
 //
-//  FTLeftViewController.h
+//  FTFrontViewController.h
 //  Satakams
 //
 //  Created by FabNeeraj on 10/4/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FTLeftViewController : UITableViewController
-
+@interface FTPoemsViewController : UITableViewController
+- (void)setCellPrefix:(NSString *)prefix;
 @end

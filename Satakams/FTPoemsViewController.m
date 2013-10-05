@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 FT. All rights reserved.
 //
 
-#import "FTFrontViewController.h"
+#import "FTPoemsViewController.h"
 #import "PKRevealController.h"
 
-@interface FTFrontViewController ()
+@interface FTPoemsViewController ()
 @property(nonatomic, strong)NSString *cellPrefix;
 @end
 
-@implementation FTFrontViewController
+@implementation FTPoemsViewController
 
 @synthesize cellPrefix = mCellPrefix;
 
