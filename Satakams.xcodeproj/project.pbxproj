@@ -7,28 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */; };
+		18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */; };
+		18971A4C18018AFD003DA5B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3F18018AFD003DA5B4 /* main.m */; };
+		18971A4E18018AFD003DA5B4 /* FTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4418018AFD003DA5B4 /* FTMenuViewController.m */; };
+		18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */; };
+		18971A5018018AFD003DA5B4 /* FTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4818018AFD003DA5B4 /* FTViewController.m */; };
+		18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18971A5118018B0F003DA5B4 /* InfoPlist.strings */; };
 		18ECA82317FCB16D00C930FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82217FCB16D00C930FE /* Foundation.framework */; };
 		18ECA82517FCB16D00C930FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82417FCB16D00C930FE /* CoreGraphics.framework */; };
 		18ECA82717FCB16D00C930FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82617FCB16D00C930FE /* UIKit.framework */; };
-		18ECA82D17FCB16D00C930FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18ECA82B17FCB16D00C930FE /* InfoPlist.strings */; };
-		18ECA82F17FCB16D00C930FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECA82E17FCB16D00C930FE /* main.m */; };
-		18ECA83317FCB16D00C930FE /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECA83217FCB16D00C930FE /* FTAppDelegate.m */; };
-		18ECA83617FCB16D00C930FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18ECA83417FCB16D00C930FE /* Main.storyboard */; };
-		18ECA83917FCB16D00C930FE /* FTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECA83817FCB16D00C930FE /* FTViewController.m */; };
 		18ECA83B17FCB16D00C930FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18ECA83A17FCB16D00C930FE /* Images.xcassets */; };
 		18ECA84217FCB16D00C930FE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA84117FCB16D00C930FE /* XCTest.framework */; };
 		18ECA84317FCB16D00C930FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82217FCB16D00C930FE /* Foundation.framework */; };
 		18ECA84417FCB16D00C930FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82617FCB16D00C930FE /* UIKit.framework */; };
 		18ECA84C17FCB16D00C930FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18ECA84A17FCB16D00C930FE /* InfoPlist.strings */; };
 		18ECA84E17FCB16D00C930FE /* SatakamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECA84D17FCB16D00C930FE /* SatakamsTests.m */; };
-		82021DB617FDF11B0065F7A4 /* FTPoemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */; };
-		82021DB917FDF12E0065F7A4 /* FTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */; };
 		82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */; };
 		82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */; };
 		82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */; };
 		82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */; };
 		82021DC4180061650065F7A4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82021DC3180061650065F7A4 /* libsqlite3.0.dylib */; };
-		82021DC718006E180065F7A4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82021DC618006E180065F7A4 /* FTDatabaseWrapper.m */; };
 		B9265BE4956F4FF387FC8F2D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BEEFC72C6443568C0215B4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,19 +42,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18971A3A18018AFD003DA5B4 /* FTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAppDelegate.h; sourceTree = "<group>"; };
+		18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAppDelegate.m; sourceTree = "<group>"; };
+		18971A3C18018AFD003DA5B4 /* FTDatabaseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTDatabaseWrapper.h; sourceTree = "<group>"; };
+		18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTDatabaseWrapper.m; sourceTree = "<group>"; };
+		18971A3F18018AFD003DA5B4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18971A4018018AFD003DA5B4 /* Satakams-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Satakams-Info.plist"; sourceTree = "<group>"; };
+		18971A4118018AFD003DA5B4 /* Satakams-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Satakams-Prefix.pch"; sourceTree = "<group>"; };
+		18971A4318018AFD003DA5B4 /* FTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMenuViewController.h; sourceTree = "<group>"; };
+		18971A4418018AFD003DA5B4 /* FTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMenuViewController.m; sourceTree = "<group>"; };
+		18971A4518018AFD003DA5B4 /* FTPoemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsViewController.h; sourceTree = "<group>"; };
+		18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsViewController.m; sourceTree = "<group>"; };
+		18971A4718018AFD003DA5B4 /* FTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTViewController.h; sourceTree = "<group>"; };
+		18971A4818018AFD003DA5B4 /* FTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTViewController.m; sourceTree = "<group>"; };
+		18971A5118018B0F003DA5B4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		18ECA81F17FCB16D00C930FE /* Satakams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satakams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECA82217FCB16D00C930FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18ECA82417FCB16D00C930FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		18ECA82617FCB16D00C930FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		18ECA82A17FCB16D00C930FE /* Satakams-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Satakams-Info.plist"; sourceTree = "<group>"; };
-		18ECA82C17FCB16D00C930FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		18ECA82E17FCB16D00C930FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18ECA83017FCB16D00C930FE /* Satakams-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Satakams-Prefix.pch"; sourceTree = "<group>"; };
-		18ECA83117FCB16D00C930FE /* FTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTAppDelegate.h; sourceTree = "<group>"; };
-		18ECA83217FCB16D00C930FE /* FTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTAppDelegate.m; sourceTree = "<group>"; };
-		18ECA83517FCB16D00C930FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18ECA83717FCB16D00C930FE /* FTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTViewController.h; sourceTree = "<group>"; };
-		18ECA83817FCB16D00C930FE /* FTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTViewController.m; sourceTree = "<group>"; };
 		18ECA83A17FCB16D00C930FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18ECA84017FCB16D00C930FE /* SatakamsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SatakamsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECA84117FCB16D00C930FE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,17 +67,11 @@
 		18ECA84B17FCB16D00C930FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18ECA84D17FCB16D00C930FE /* SatakamsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SatakamsTests.m; sourceTree = "<group>"; };
 		63BEEFC72C6443568C0215B4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		82021DB417FDF11B0065F7A4 /* FTPoemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsViewController.h; sourceTree = "<group>"; };
-		82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsViewController.m; sourceTree = "<group>"; };
-		82021DB717FDF12E0065F7A4 /* FTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMenuViewController.h; sourceTree = "<group>"; };
-		82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMenuViewController.m; sourceTree = "<group>"; };
 		82021DBB17FDF4930065F7A4 /* reveal_menu_icon_landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_landscape.png; sourceTree = "<group>"; };
 		82021DBC17FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_landscape@2x.png"; sourceTree = "<group>"; };
 		82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_portrait.png; sourceTree = "<group>"; };
 		82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_portrait@2x.png"; sourceTree = "<group>"; };
 		82021DC3180061650065F7A4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		82021DC518006E180065F7A4 /* FTDatabaseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTDatabaseWrapper.h; sourceTree = "<group>"; };
-		82021DC618006E180065F7A4 /* FTDatabaseWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTDatabaseWrapper.m; sourceTree = "<group>"; };
 		AC5BC34864C04657A83DC151 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +101,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18971A3818018AFD003DA5B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18971A3918018AFD003DA5B4 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				18971A3A18018AFD003DA5B4 /* FTAppDelegate.h */,
+				18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */,
+				18971A3C18018AFD003DA5B4 /* FTDatabaseWrapper.h */,
+				18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		18971A3E18018AFD003DA5B4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				18971A5118018B0F003DA5B4 /* InfoPlist.strings */,
+				18971A3F18018AFD003DA5B4 /* main.m */,
+				18971A4018018AFD003DA5B4 /* Satakams-Info.plist */,
+				18971A4118018AFD003DA5B4 /* Satakams-Prefix.pch */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		18971A4218018AFD003DA5B4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18971A4318018AFD003DA5B4 /* FTMenuViewController.h */,
+				18971A4418018AFD003DA5B4 /* FTMenuViewController.m */,
+				18971A4518018AFD003DA5B4 /* FTPoemsViewController.h */,
+				18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */,
+				18971A4718018AFD003DA5B4 /* FTViewController.h */,
+				18971A4818018AFD003DA5B4 /* FTViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		18971A4918018AFD003DA5B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		18ECA81617FCB16D00C930FE = {
 			isa = PBXGroup;
 			children = (
@@ -139,33 +186,15 @@
 		18ECA82817FCB16D00C930FE /* Satakams */ = {
 			isa = PBXGroup;
 			children = (
+				18971A3818018AFD003DA5B4 /* Model */,
+				18971A3918018AFD003DA5B4 /* Singletons */,
+				18971A4218018AFD003DA5B4 /* ViewControllers */,
+				18971A4918018AFD003DA5B4 /* Views */,
+				18971A3E18018AFD003DA5B4 /* SupportingFiles */,
 				82021DBA17FDF4930065F7A4 /* Images */,
-				18ECA83117FCB16D00C930FE /* FTAppDelegate.h */,
-				18ECA83217FCB16D00C930FE /* FTAppDelegate.m */,
-				18ECA83417FCB16D00C930FE /* Main.storyboard */,
-				18ECA83717FCB16D00C930FE /* FTViewController.h */,
-				18ECA83817FCB16D00C930FE /* FTViewController.m */,
 				18ECA83A17FCB16D00C930FE /* Images.xcassets */,
-				18ECA82917FCB16D00C930FE /* Supporting Files */,
-				82021DB417FDF11B0065F7A4 /* FTPoemsViewController.h */,
-				82021DB517FDF11B0065F7A4 /* FTPoemsViewController.m */,
-				82021DB717FDF12E0065F7A4 /* FTMenuViewController.h */,
-				82021DB817FDF12E0065F7A4 /* FTMenuViewController.m */,
-				82021DC518006E180065F7A4 /* FTDatabaseWrapper.h */,
-				82021DC618006E180065F7A4 /* FTDatabaseWrapper.m */,
 			);
 			path = Satakams;
-			sourceTree = "<group>";
-		};
-		18ECA82917FCB16D00C930FE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				18ECA82A17FCB16D00C930FE /* Satakams-Info.plist */,
-				18ECA82B17FCB16D00C930FE /* InfoPlist.strings */,
-				18ECA82E17FCB16D00C930FE /* main.m */,
-				18ECA83017FCB16D00C930FE /* Satakams-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		18ECA84717FCB16D00C930FE /* SatakamsTests */ = {
@@ -277,11 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */,
+				18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */,
 				18ECA83B17FCB16D00C930FE /* Images.xcassets in Resources */,
 				82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */,
-				18ECA82D17FCB16D00C930FE /* InfoPlist.strings in Resources */,
 				82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */,
-				18ECA83617FCB16D00C930FE /* Main.storyboard in Resources */,
 				82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,12 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82021DB617FDF11B0065F7A4 /* FTPoemsViewController.m in Sources */,
-				18ECA83317FCB16D00C930FE /* FTAppDelegate.m in Sources */,
-				82021DC718006E180065F7A4 /* FTDatabaseWrapper.m in Sources */,
-				82021DB917FDF12E0065F7A4 /* FTMenuViewController.m in Sources */,
-				18ECA82F17FCB16D00C930FE /* main.m in Sources */,
-				18ECA83917FCB16D00C930FE /* FTViewController.m in Sources */,
+				18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */,
+				18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */,
+				18971A5018018AFD003DA5B4 /* FTViewController.m in Sources */,
+				18971A4C18018AFD003DA5B4 /* main.m in Sources */,
+				18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */,
+				18971A4E18018AFD003DA5B4 /* FTMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,22 +390,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18ECA82B17FCB16D00C930FE /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18ECA82C17FCB16D00C930FE /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		18ECA83417FCB16D00C930FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18ECA83517FCB16D00C930FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18ECA84A17FCB16D00C930FE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -468,8 +480,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Satakams/Satakams-Prefix.pch";
-				INFOPLIST_FILE = "Satakams/Satakams-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Satakams/SupportingFiles//Satakams-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Satakams/SupportingFiles/Satakams-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -482,8 +494,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Satakams/Satakams-Prefix.pch";
-				INFOPLIST_FILE = "Satakams/Satakams-Info.plist";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Satakams/SupportingFiles//Satakams-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Satakams/SupportingFiles/Satakams-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
