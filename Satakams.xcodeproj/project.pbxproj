@@ -14,6 +14,9 @@
 		18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */; };
 		18971A5018018AFD003DA5B4 /* FTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4818018AFD003DA5B4 /* FTViewController.m */; };
 		18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18971A5118018B0F003DA5B4 /* InfoPlist.strings */; };
+		18971A5518029027003DA5B4 /* FTPoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5418029027003DA5B4 /* FTPoem.m */; };
+		18971A5818029036003DA5B4 /* FTPoet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5718029036003DA5B4 /* FTPoet.m */; };
+		18971A5B18029042003DA5B4 /* FTSatakam.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5A18029042003DA5B4 /* FTSatakam.m */; };
 		18ECA82317FCB16D00C930FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82217FCB16D00C930FE /* Foundation.framework */; };
 		18ECA82517FCB16D00C930FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82417FCB16D00C930FE /* CoreGraphics.framework */; };
 		18ECA82717FCB16D00C930FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ECA82617FCB16D00C930FE /* UIKit.framework */; };
@@ -56,6 +59,12 @@
 		18971A4718018AFD003DA5B4 /* FTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTViewController.h; sourceTree = "<group>"; };
 		18971A4818018AFD003DA5B4 /* FTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTViewController.m; sourceTree = "<group>"; };
 		18971A5118018B0F003DA5B4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		18971A5318029027003DA5B4 /* FTPoem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoem.h; sourceTree = "<group>"; };
+		18971A5418029027003DA5B4 /* FTPoem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoem.m; sourceTree = "<group>"; };
+		18971A5618029036003DA5B4 /* FTPoet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoet.h; sourceTree = "<group>"; };
+		18971A5718029036003DA5B4 /* FTPoet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoet.m; sourceTree = "<group>"; };
+		18971A5918029042003DA5B4 /* FTSatakam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSatakam.h; sourceTree = "<group>"; };
+		18971A5A18029042003DA5B4 /* FTSatakam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSatakam.m; sourceTree = "<group>"; };
 		18ECA81F17FCB16D00C930FE /* Satakams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satakams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18ECA82217FCB16D00C930FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18ECA82417FCB16D00C930FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +113,12 @@
 		18971A3818018AFD003DA5B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18971A5318029027003DA5B4 /* FTPoem.h */,
+				18971A5418029027003DA5B4 /* FTPoem.m */,
+				18971A5618029036003DA5B4 /* FTPoet.h */,
+				18971A5718029036003DA5B4 /* FTPoet.m */,
+				18971A5918029042003DA5B4 /* FTSatakam.h */,
+				18971A5A18029042003DA5B4 /* FTSatakam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,11 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18971A5518029027003DA5B4 /* FTPoem.m in Sources */,
 				18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */,
 				18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */,
 				18971A5018018AFD003DA5B4 /* FTViewController.m in Sources */,
 				18971A4C18018AFD003DA5B4 /* main.m in Sources */,
+				18971A5818029036003DA5B4 /* FTPoet.m in Sources */,
 				18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */,
+				18971A5B18029042003DA5B4 /* FTSatakam.m in Sources */,
 				18971A4E18018AFD003DA5B4 /* FTMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
