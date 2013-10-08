@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FTPoemsViewController : UITableViewController
-- (void)setCellPrefix:(NSString *)prefix;
+@interface FTPoemsViewController : UITableViewController {
+
+    int mCellPrefix;
+}
+@property(nonatomic, unsafe_unretained)int cellPrefix;
 @end

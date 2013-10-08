@@ -9,9 +9,12 @@
 #import "FTPoemsViewController.h"
 #import "PKRevealController.h"
 #import "FTDatabaseWrapper.h"
+#import "FTPoem.h"
 
 @interface FTPoemsViewController ()
-@property(nonatomic, strong)NSString *cellPrefix;
+{
+    __strong NSArray *mPoems;
+}
 @end
 
 @implementation FTPoemsViewController
@@ -37,8 +40,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.cellPrefix = @"0";
-    
+    if ([[FTDatabaseWrapper sharedInstance] allSatakams]) {
+        self.cellPrefix = 0;
+        mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
+    }
+    else {
+        self.cellPrefix = -1;
+        mPoems = nil;
+    }
     UIImage *revealImagePortrait = [UIImage imageNamed:@"reveal_menu_icon_portrait"];
     UIImage *revealImageLandscape = [UIImage imageNamed:@"reveal_menu_icon_landscape"];
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
@@ -71,7 +80,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return mPoems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,19 +89,22 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %d",mCellPrefix,indexPath.row];
+    FTPoem *poem = [mPoems objectAtIndex:indexPath.row];
+    cell.textLabel.text = poem.verse;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
-- (void)setCellPrefix:(NSString *)prefix {
+- (void)setCellPrefix:(int)prefix {
     mCellPrefix = prefix;
+    mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
     [self.tableView reloadData];
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

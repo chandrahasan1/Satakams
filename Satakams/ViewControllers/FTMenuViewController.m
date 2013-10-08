@@ -10,12 +10,24 @@
 #import "PKRevealController.h"
 #import "FTPoemsViewController.h"
 #import "FTAppDelegate.h"
+#import "FTDatabaseWrapper.h"
+#import "FTSatakam.h"
 
 @interface FTMenuViewController ()
 
 @end
 
 @implementation FTMenuViewController
+
+#pragma mark -
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,26 +38,22 @@
     return self;
 }
 
+
+#pragma mark -
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     self.title = @"Satakams";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = NO;
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    mSatakams = [[FTDatabaseWrapper sharedInstance] allSatakams];
     
     [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"Cell"];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -58,7 +66,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    if (mSatakams.count) {
+       return mSatakams.count + 1; // +1 for Fav poems.
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,17 +78,34 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];    
+    if (mSatakams.count) {
+        if (indexPath.row < mSatakams.count) {
+            //Satakam row
+            FTSatakam *satakam = [mSatakams objectAtIndex:indexPath.row];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", satakam.satakamName];
+        }
+        else {
+            //Fav row
+            cell.textLabel.text = @"Fav";
+        }
+    }
     return cell;
 }
 
- 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Not sure about this logic of sending messages between controllers.
     FTAppDelegate *appDelegate = (FTAppDelegate *)[[UIApplication sharedApplication] delegate];
     UINavigationController *nagivationController = (UINavigationController *)appDelegate.revealController.frontViewController;
     FTPoemsViewController *frontViewController = (FTPoemsViewController *)[nagivationController.viewControllers objectAtIndex:0];
-    [frontViewController setCellPrefix:[NSString stringWithFormat:@"%d", indexPath.row]];
+    if (indexPath.row < mSatakams.count) {
+        FTSatakam *satakam = [mSatakams objectAtIndex:indexPath.row];
+        frontViewController.cellPrefix = satakam.satakamId.intValue;
+    }
+    else {
+        //For Fav
+        frontViewController.cellPrefix = -1;
+    }
     [appDelegate.revealController showViewController:nagivationController];
 }
 

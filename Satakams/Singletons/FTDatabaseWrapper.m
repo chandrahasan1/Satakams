@@ -27,6 +27,19 @@
 #import "FTPoem.h"
 #import "FTPoet.h"
 
+/*
+ 
+ //DB insert sample sql statements
+ 
+ INSERT INTO SATAKAMS(SID, Name, Bio) VALUES(3,'Satakam 3','This is third Satakam I say');
+ 
+ INSERT INTO POEMS(PoemsID, Verse, Meaning, AudioFile, SID, faved) VALUES (5,'This is the fifth of first', 'Stupid Meaning', '',1,0);
+ 
+ INSERT INTO POETS(PoetsID, Name, Bio, SID) VALUES (1, 'Poet1', 'Stupid Bio', 1);
+ 
+*/
+
+
 @interface FTDatabaseWrapper()
 @property (nonatomic, strong) FMDatabaseQueue *databaseQueue;
 @end
@@ -47,6 +60,7 @@
 - (id)init {
     self = [super init];
     if (self) {
+        [self resetDatabaseFileForced:NO];
         self.databaseQueue = [FMDatabaseQueue databaseQueueWithPath:[self databaseFilePath]];
         BOOL tableCreated = [self createTables];
         NSLog(@"tableCreated : %d", tableCreated);
@@ -62,7 +76,7 @@
 
 - (void)resetDatabaseFileForced:(BOOL)forced {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *databaseFilePath = [[FTDatabaseWrapper sharedInstance] databaseFilePath];
+    NSString *databaseFilePath = [self databaseFilePath];
     if (!forced) {
         BOOL fileExists = [fileManager fileExistsAtPath:databaseFilePath];
         if (fileExists) {
@@ -112,14 +126,13 @@
     return success;
 }
 
-- (BOOL)favUnfavPoem:(BOOL)fav WithPoemId:(NSString *)poemId {
+- (BOOL)setFav:(BOOL)fav forPoemwithPoemId:(NSString *)poemId {
     __block BOOL success = NO;
     [mDatabaseQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         success = [db executeUpdateWithFormat:FAV_POEM_WITH_ID, fav,[poemId intValue]];
         NSLog(@"%@", [db lastError]);
     }];
     return success;
-    
 }
 
 

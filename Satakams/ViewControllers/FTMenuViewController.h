@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FTMenuViewController : UITableViewController
-
+{
+    NSArray *mSatakams;
+}
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18241D7418047D1B0019C34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18241D7318047D1B0019C34D /* Main.storyboard */; };
+		18241D7618047F770019C34D /* ft.satakam.database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18241D7518047F770019C34D /* ft.satakam.database.sqlite */; };
 		18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */; };
 		18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */; };
 		18971A4C18018AFD003DA5B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3F18018AFD003DA5B4 /* main.m */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18241D7318047D1B0019C34D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18241D7518047F770019C34D /* ft.satakam.database.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ft.satakam.database.sqlite; sourceTree = "<group>"; };
 		18971A3A18018AFD003DA5B4 /* FTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAppDelegate.h; sourceTree = "<group>"; };
 		18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAppDelegate.m; sourceTree = "<group>"; };
 		18971A3C18018AFD003DA5B4 /* FTDatabaseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTDatabaseWrapper.h; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18241D72180469E80019C34D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18241D7518047F770019C34D /* ft.satakam.database.sqlite */,
+				18241D7318047D1B0019C34D /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		18971A3818018AFD003DA5B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +214,7 @@
 		18ECA82817FCB16D00C930FE /* Satakams */ = {
 			isa = PBXGroup;
 			children = (
+				18241D72180469E80019C34D /* Resources */,
 				18971A3818018AFD003DA5B4 /* Model */,
 				18971A3918018AFD003DA5B4 /* Singletons */,
 				18971A4218018AFD003DA5B4 /* ViewControllers */,
@@ -320,12 +334,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18241D7418047D1B0019C34D /* Main.storyboard in Resources */,
 				82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */,
 				18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */,
 				18ECA83B17FCB16D00C930FE /* Images.xcassets in Resources */,
 				82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */,
 				82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */,
 				82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */,
+				18241D7618047F770019C34D /* ft.satakam.database.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
