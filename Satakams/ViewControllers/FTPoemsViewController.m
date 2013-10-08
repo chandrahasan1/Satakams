@@ -8,6 +8,7 @@
 
 #import "FTPoemsViewController.h"
 #import "PKRevealController.h"
+#import "FTDatabaseWrapper.h"
 
 @interface FTPoemsViewController ()
 @property(nonatomic, strong)NSString *cellPrefix;
@@ -47,6 +48,9 @@
     
     
     [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"Cell"];
+    
+    
+    [[FTDatabaseWrapper sharedInstance] allFavedPoems];
     
 }
 

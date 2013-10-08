@@ -17,7 +17,7 @@
 #define GET_ALL_SATAKAMS @"SELECT * FROM SATAKAMS;"
 #define GET_ALL_POEMS_FOR_SATKAM_ID @"SELECT * FROM POEMS WHERE SID=%d;"
 #define POET_FOR_SATAKAM_WITH_ID @"SELECT * FROM POETS WHERE SID=%d;"
-#define FAVED_POEMS_FOR_SATKAM_WITH_ID @"SELECT * FROM POEMS WHERE SID=%d AND faved=%d;"
+#define FAVED_POEMS @"SELECT * FROM POEMS WHERE faved=%d GROUP BY SID;"
 #define FAV_POEM_WITH_ID @"UPDATE POEMS SET faved=%d WHERE PoemsID=%d"
 
 #import "FTDatabaseWrapper.h"
@@ -174,10 +174,10 @@
     return poet;
 }
 
-- (NSArray *)allFavedPoemsForSatakamsWithId:(NSString *)satkamId {
+- (NSArray *)allFavedPoems {
     __block NSMutableArray *favedPoems = [[NSMutableArray alloc] init];
     [mDatabaseQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        FMResultSet *resultSet = [db executeQueryWithFormat:FAVED_POEMS_FOR_SATKAM_WITH_ID, [satkamId integerValue], 1];
+        FMResultSet *resultSet = [db executeQueryWithFormat:FAVED_POEMS, 1];
         while ([resultSet next]) {
             FTPoem *poem = [[FTPoem alloc] init];
             poem.poemId = [NSString stringWithFormat:@"%d", [resultSet intForColumn:@"PoemsID"]];

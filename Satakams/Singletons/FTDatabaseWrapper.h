@@ -22,7 +22,7 @@
 - (NSArray *)allSatakams;
 - (NSArray *)allPoemsForSatakamsWithId:(NSString *)satakamId;
 - (FTPoet *)poetForSatakamWithId:(NSString *)satakamId;
-- (NSArray *)allFavedPoemsForSatakamsWithId:(NSString *)satkamId;
+- (NSArray *)allFavedPoems;
 - (BOOL)favUnfavPoem:(BOOL)fav WithPoemId:(NSString *)poemId;
 // If forced is 'NO' then if sqlite file doesn't exist then it will copy file from bundle to user documents.If forced is 'YES'
 // then it will copy file from bundle to user documents.
