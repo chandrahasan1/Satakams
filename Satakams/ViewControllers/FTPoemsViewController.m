@@ -10,6 +10,7 @@
 #import "PKRevealController.h"
 #import "FTDatabaseWrapper.h"
 #import "FTPoem.h"
+#import "FTSatakam.h"
 
 @interface FTPoemsViewController ()
 {
@@ -40,9 +41,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"Cell"];
+    
     if ([[FTDatabaseWrapper sharedInstance] allSatakams]) {
-        self.cellPrefix = 0;
-        mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
+        self.cellPrefix = 1;
     }
     else {
         self.cellPrefix = -1;
@@ -54,13 +56,6 @@
     {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:revealImageLandscape style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
     }
-    
-    
-    [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"Cell"];
-    
-    
-    [[FTDatabaseWrapper sharedInstance] allFavedPoems];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,8 +96,19 @@
 
 - (void)setCellPrefix:(int)prefix {
     mCellPrefix = prefix;
-    mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
-    [self.tableView reloadData];
+    if (mCellPrefix > 0) {
+       //For Normal Satakams
+        mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
+        FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
+        self.title = satakam.satakamName;
+    }
+    else {
+        mPoems = [[NSMutableArray alloc] initWithArray:[[FTDatabaseWrapper sharedInstance] allFavedPoems]];
+        self.title = @"Fav Poems";
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 /*

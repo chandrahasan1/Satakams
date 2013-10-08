@@ -17,6 +17,7 @@
 #define GET_ALL_SATAKAMS @"SELECT * FROM SATAKAMS;"
 #define GET_ALL_POEMS_FOR_SATKAM_ID @"SELECT * FROM POEMS WHERE SID=%d;"
 #define POET_FOR_SATAKAM_WITH_ID @"SELECT * FROM POETS WHERE SID=%d;"
+#define SATAKAM_FOR_SATAKAM_WITH_ID @"SELECT * FROM SATAKAMS WHERE SID=%d;"
 #define FAVED_POEMS @"SELECT * FROM POEMS WHERE faved=%d GROUP BY SID;"
 #define FAV_POEM_WITH_ID @"UPDATE POEMS SET faved=%d WHERE PoemsID=%d"
 
@@ -187,6 +188,20 @@
     return poet;
 }
 
+- (id)getSatakamWithId:(NSString *)satakamId {
+    
+    __block FTSatakam *satakam = [[FTSatakam alloc] init];
+    [mDatabaseQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        FMResultSet *resultSet = [db executeQueryWithFormat:SATAKAM_FOR_SATAKAM_WITH_ID, [satakamId integerValue]];
+        while ([resultSet next]) {
+            satakam.satakamId = [NSString stringWithFormat:@"%d", [resultSet intForColumn:@"SID"]];
+            satakam.satakamName = [resultSet stringForColumn:@"Name"];
+            satakam.satakamBio = [resultSet stringForColumn:@"Bio"];
+        }
+    }];
+    return satakam;
+}
+
 - (NSArray *)allFavedPoems {
     __block NSMutableArray *favedPoems = [[NSMutableArray alloc] init];
     [mDatabaseQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
@@ -199,6 +214,7 @@
             poem.audioFile = [resultSet stringForColumn:@"AudioFile"];
             poem.satakamId = [NSString stringWithFormat:@"%d", [resultSet intForColumn:@"SID"]];
             poem.faved = [resultSet boolForColumn:@"faved"];
+            [favedPoems addObject:poem];
         }
     }];
     return favedPoems;

@@ -24,6 +24,7 @@
 - (FTPoet *)poetForSatakamWithId:(NSString *)satakamId;
 - (NSArray *)allFavedPoems;
 - (BOOL)setFav:(BOOL)fav forPoemwithPoemId:(NSString *)poemId;
+- (id)getSatakamWithId:(NSString *)satakamId;
 
 // If forced is 'NO' then if sqlite file doesn't exist then it will copy file from bundle to user documents. If forced is 'YES'
 // then it will copy file from bundle to user documents.
