@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		18241D7418047D1B0019C34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18241D7318047D1B0019C34D /* Main.storyboard */; };
 		18241D7618047F770019C34D /* ft.satakam.database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18241D7518047F770019C34D /* ft.satakam.database.sqlite */; };
+		187215FF182052CA0086CEBD /* Aadhi Bikshuvu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215F5182052CA0086CEBD /* Aadhi Bikshuvu.mp3 */; };
+		18721600182052CA0086CEBD /* Chandamaama Raave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215F6182052CA0086CEBD /* Chandamaama Raave.mp3 */; };
+		18721601182052CA0086CEBD /* Chinuku Chinuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215F7182052CA0086CEBD /* Chinuku Chinuku.mp3 */; };
+		18721602182052CA0086CEBD /* Ee Gaali Ee Vela.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215F8182052CA0086CEBD /* Ee Gaali Ee Vela.mp3 */; };
+		18721603182052CA0086CEBD /* Flute Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215F9182052CA0086CEBD /* Flute Music.mp3 */; };
+		18721604182052CA0086CEBD /* Merise Thaaraladhi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FA182052CA0086CEBD /* Merise Thaaraladhi.mp3 */; };
+		18721605182052CA0086CEBD /* Paatallo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FB182052CA0086CEBD /* Paatallo.mp3 */; };
+		18721606182052CA0086CEBD /* Polimera Dhaatipothunna.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FC182052CA0086CEBD /* Polimera Dhaatipothunna.mp3 */; };
+		18721607182052CA0086CEBD /* Prakruthikanthaku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FD182052CA0086CEBD /* Prakruthikanthaku.mp3 */; };
+		18721608182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FE182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 */; };
+		1872160B1820CC4F0086CEBD /* FTAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1872160A1820CC4F0086CEBD /* FTAudioManager.m */; };
 		18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */; };
 		18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */; };
 		18971A4C18018AFD003DA5B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3F18018AFD003DA5B4 /* main.m */; };
 		18971A4E18018AFD003DA5B4 /* FTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4418018AFD003DA5B4 /* FTMenuViewController.m */; };
 		18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */; };
-		18971A5018018AFD003DA5B4 /* FTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4818018AFD003DA5B4 /* FTViewController.m */; };
 		18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18971A5118018B0F003DA5B4 /* InfoPlist.strings */; };
 		18971A5518029027003DA5B4 /* FTPoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5418029027003DA5B4 /* FTPoem.m */; };
 		18971A5818029036003DA5B4 /* FTPoet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5718029036003DA5B4 /* FTPoet.m */; };
@@ -53,6 +63,18 @@
 /* Begin PBXFileReference section */
 		18241D7318047D1B0019C34D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18241D7518047F770019C34D /* ft.satakam.database.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ft.satakam.database.sqlite; sourceTree = "<group>"; };
+		187215F5182052CA0086CEBD /* Aadhi Bikshuvu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aadhi Bikshuvu.mp3"; sourceTree = "<group>"; };
+		187215F6182052CA0086CEBD /* Chandamaama Raave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chandamaama Raave.mp3"; sourceTree = "<group>"; };
+		187215F7182052CA0086CEBD /* Chinuku Chinuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chinuku Chinuku.mp3"; sourceTree = "<group>"; };
+		187215F8182052CA0086CEBD /* Ee Gaali Ee Vela.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ee Gaali Ee Vela.mp3"; sourceTree = "<group>"; };
+		187215F9182052CA0086CEBD /* Flute Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Flute Music.mp3"; sourceTree = "<group>"; };
+		187215FA182052CA0086CEBD /* Merise Thaaraladhi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Merise Thaaraladhi.mp3"; sourceTree = "<group>"; };
+		187215FB182052CA0086CEBD /* Paatallo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Paatallo.mp3; sourceTree = "<group>"; };
+		187215FC182052CA0086CEBD /* Polimera Dhaatipothunna.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Polimera Dhaatipothunna.mp3"; sourceTree = "<group>"; };
+		187215FD182052CA0086CEBD /* Prakruthikanthaku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Prakruthikanthaku.mp3; sourceTree = "<group>"; };
+		187215FE182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Vidhaatha Thalapuna.mp3"; sourceTree = "<group>"; };
+		187216091820CC4F0086CEBD /* FTAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAudioManager.h; sourceTree = "<group>"; };
+		1872160A1820CC4F0086CEBD /* FTAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAudioManager.m; sourceTree = "<group>"; };
 		18971A3A18018AFD003DA5B4 /* FTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAppDelegate.h; sourceTree = "<group>"; };
 		18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAppDelegate.m; sourceTree = "<group>"; };
 		18971A3C18018AFD003DA5B4 /* FTDatabaseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTDatabaseWrapper.h; sourceTree = "<group>"; };
@@ -64,8 +86,6 @@
 		18971A4418018AFD003DA5B4 /* FTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMenuViewController.m; sourceTree = "<group>"; };
 		18971A4518018AFD003DA5B4 /* FTPoemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsViewController.h; sourceTree = "<group>"; };
 		18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsViewController.m; sourceTree = "<group>"; };
-		18971A4718018AFD003DA5B4 /* FTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTViewController.h; sourceTree = "<group>"; };
-		18971A4818018AFD003DA5B4 /* FTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTViewController.m; sourceTree = "<group>"; };
 		18971A5118018B0F003DA5B4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		18971A5318029027003DA5B4 /* FTPoem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoem.h; sourceTree = "<group>"; };
 		18971A5418029027003DA5B4 /* FTPoem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoem.m; sourceTree = "<group>"; };
@@ -129,10 +149,28 @@
 		18241D72180469E80019C34D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				187215E018204F8F0086CEBD /* AudioFiles */,
 				18241D7518047F770019C34D /* ft.satakam.database.sqlite */,
 				18241D7318047D1B0019C34D /* Main.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		187215E018204F8F0086CEBD /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				187215F5182052CA0086CEBD /* Aadhi Bikshuvu.mp3 */,
+				187215F6182052CA0086CEBD /* Chandamaama Raave.mp3 */,
+				187215F7182052CA0086CEBD /* Chinuku Chinuku.mp3 */,
+				187215F8182052CA0086CEBD /* Ee Gaali Ee Vela.mp3 */,
+				187215F9182052CA0086CEBD /* Flute Music.mp3 */,
+				187215FA182052CA0086CEBD /* Merise Thaaraladhi.mp3 */,
+				187215FB182052CA0086CEBD /* Paatallo.mp3 */,
+				187215FC182052CA0086CEBD /* Polimera Dhaatipothunna.mp3 */,
+				187215FD182052CA0086CEBD /* Prakruthikanthaku.mp3 */,
+				187215FE182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 */,
+			);
+			path = AudioFiles;
 			sourceTree = "<group>";
 		};
 		18971A3818018AFD003DA5B4 /* Model */ = {
@@ -155,6 +193,8 @@
 				18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */,
 				18971A3C18018AFD003DA5B4 /* FTDatabaseWrapper.h */,
 				18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */,
+				187216091820CC4F0086CEBD /* FTAudioManager.h */,
+				1872160A1820CC4F0086CEBD /* FTAudioManager.m */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -370,11 +410,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18721600182052CA0086CEBD /* Chandamaama Raave.mp3 in Resources */,
 				18241D7418047D1B0019C34D /* Main.storyboard in Resources */,
 				82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */,
+				18721605182052CA0086CEBD /* Paatallo.mp3 in Resources */,
+				18721603182052CA0086CEBD /* Flute Music.mp3 in Resources */,
 				18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */,
+				18721602182052CA0086CEBD /* Ee Gaali Ee Vela.mp3 in Resources */,
+				187215FF182052CA0086CEBD /* Aadhi Bikshuvu.mp3 in Resources */,
 				18ECA83B17FCB16D00C930FE /* Images.xcassets in Resources */,
 				82021DC117FDF4930065F7A4 /* reveal_menu_icon_portrait.png in Resources */,
+				18721606182052CA0086CEBD /* Polimera Dhaatipothunna.mp3 in Resources */,
+				18721608182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 in Resources */,
+				18721601182052CA0086CEBD /* Chinuku Chinuku.mp3 in Resources */,
+				18721604182052CA0086CEBD /* Merise Thaaraladhi.mp3 in Resources */,
+				18721607182052CA0086CEBD /* Prakruthikanthaku.mp3 in Resources */,
 				82021DBF17FDF4930065F7A4 /* reveal_menu_icon_landscape.png in Resources */,
 				82021DC017FDF4930065F7A4 /* reveal_menu_icon_landscape@2x.png in Resources */,
 				18241D7618047F770019C34D /* ft.satakam.database.sqlite in Resources */,
@@ -438,6 +488,7 @@
 				18971A4C18018AFD003DA5B4 /* main.m in Sources */,
 				18971A5818029036003DA5B4 /* FTPoet.m in Sources */,
 				82B75BAF182541C60060B8AA /* FTPoemsHoriontalFlowLayout.m in Sources */,
+				1872160B1820CC4F0086CEBD /* FTAudioManager.m in Sources */,
 				18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */,
 				18971A5B18029042003DA5B4 /* FTSatakam.m in Sources */,
 				82B75BAC182541AB0060B8AA /* FTPoemsVerticalFlowLayout.m in Sources */,
@@ -553,10 +604,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chandrahasan Vantaku (ACN79PCC2Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Satakams/SupportingFiles//Satakams-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Satakams/SupportingFiles/Satakams-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AC1613BD-7913-4438-A65D-AA6861DAB1D3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -567,10 +620,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chandrahasan Vantaku (ACN79PCC2Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Satakams/SupportingFiles//Satakams-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Satakams/SupportingFiles/Satakams-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AC1613BD-7913-4438-A65D-AA6861DAB1D3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

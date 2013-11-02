@@ -91,6 +91,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //Now play the current poem and show the Lyrics.
+    //TODO: Should I provied the option in settings to show/hide the Lyrics view?
+    
+    
 }
 
 
