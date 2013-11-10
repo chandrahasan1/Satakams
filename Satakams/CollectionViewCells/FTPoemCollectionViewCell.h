@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FTPoemCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong)NSString *cellText;
+@property (nonatomic, strong)NSString *satakamTitle;
 @end

@@ -15,7 +15,7 @@
 
 @implementation FTPoemCollectionViewCell
 
-@synthesize cellText = mCellText;
+@synthesize satakamTitle = mCellText;
 @synthesize myLabel = mMyLabel;
 
 - (id)initWithFrame:(CGRect)frame
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (void)setCellText:(NSString *)cellText
+- (void)setSatakamTitle:(NSString *)cellText
 {
     self.myLabel.text = cellText;
 }

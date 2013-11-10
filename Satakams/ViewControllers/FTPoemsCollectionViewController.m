@@ -81,7 +81,7 @@
     cell.backgroundColor = [UIColor grayColor];
     // Configure the cell...
     FTPoem *poem = [mPoems objectAtIndex:indexPath.row];
-    cell.cellText = [poem verse];
+    cell.satakamTitle = [poem verse];
     return cell;
 }
 
@@ -125,5 +125,24 @@
     }
 }
 
+
+#pragma mark - Menu Selection Protocol methods
+
+- (void)selectedSatakmWithId:(NSString *)satakamId {
+    mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
+    FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+         self.title = satakam.satakamName;
+        [self.collectionView reloadData];
+    });
+}
+
+- (void)selectedFav {
+    mPoems = [[FTDatabaseWrapper sharedInstance] allFavedPoems];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.title = @"Fav Poems";
+        [self.collectionView reloadData];
+    });
+}
 
 @end

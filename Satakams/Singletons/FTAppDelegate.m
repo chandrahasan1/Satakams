@@ -18,10 +18,14 @@
 {
     // Override point for customization after application launch.
      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Step 1: Create your controllers.
-    UINavigationController *leftNavController = [[UINavigationController alloc] initWithRootViewController:[[FTMenuViewController alloc] init]];
+    // Create your controllers.
+    FTMenuViewController *menuViewController = [[FTMenuViewController alloc] init];
+    FTPoemsCollectionViewController *poemsCollectionViewController = [[FTPoemsCollectionViewController alloc] init];
+    menuViewController.menuSelectionDelegate = poemsCollectionViewController;
+    UINavigationController *leftNavController = [[UINavigationController alloc] initWithRootViewController:menuViewController];
+    // TODO: Remove FTPoemsViewController once we are sure off of using collectionViewController.
     //    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FTPoemsViewController alloc] init]];
-    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:[[FTPoemsCollectionViewController alloc] init]];
+    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:poemsCollectionViewController];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController leftViewController:leftNavController options:nil];
     self.window.rootViewController = self.revealController;
     [self.window makeKeyAndVisible];
