@@ -19,8 +19,6 @@
 @end
 
 @implementation FTPoemsCollectionViewController
-
-@synthesize cellPrefix = mCellPrefix;
 @synthesize poems = mPoems;
 
 - (id)init
@@ -51,13 +49,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.collectionView registerClass:[FTPoemCollectionViewCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
-    if ([[FTDatabaseWrapper sharedInstance] allSatakams]) {
-        self.cellPrefix = 1;
-    }
-    else {
-        self.cellPrefix = -1;
-        mPoems = nil;
-    }
     UIImage *revealImagePortrait = [UIImage imageNamed:@"reveal_menu_icon_portrait"];
     UIImage *revealImageLandscape = [UIImage imageNamed:@"reveal_menu_icon_landscape"];
     // TODO: Check why navigationController is nil.
@@ -65,6 +56,10 @@
 //    {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:revealImageLandscape style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
 //    }
+    
+    // Show poems of the first satakam.
+    NSArray *satakams = [[FTDatabaseWrapper sharedInstance] allSatakams];
+    [self selectedSatakmWithId:[[satakams objectAtIndex:0] satakamId]];
 }
 
 #pragma mark - UICollectionView Datasource
@@ -93,25 +88,6 @@
 }
 
 
-#pragma mark - Setters
-- (void)setCellPrefix:(int)prefix {
-    mCellPrefix = prefix;
-    if (mCellPrefix > 0) {
-        //For Normal Satakams
-        mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
-        FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
-        self.title = satakam.satakamName;
-    }
-    else {
-        mPoems = [[NSMutableArray alloc] initWithArray:[[FTDatabaseWrapper sharedInstance] allFavedPoems]];
-        self.title = @"Fav Poems";
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
-}
-
-
 #pragma mark - Actions
 - (void)showLeftView:(id)sender
 {
@@ -130,7 +106,7 @@
 
 - (void)selectedSatakmWithId:(NSString *)satakamId {
     mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
-    FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:[NSString stringWithFormat:@"%d",mCellPrefix]];
+    FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:satakamId];
     dispatch_async(dispatch_get_main_queue(), ^{
          self.title = satakam.satakamName;
         [self.collectionView reloadData];

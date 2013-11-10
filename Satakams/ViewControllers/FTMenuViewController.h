@@ -7,16 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol MenuSelectionProtocol <NSObject>
-@required
-- (void)selectedSatakmWithId:(NSString *)satakamId;
-- (void)selectedFav;
-@end
+#import "FTMenuSelectionProtocol.h"
 
 @interface FTMenuViewController : UITableViewController
 {
     NSArray *mSatakams;
 }
-@property(nonatomic, weak) id<MenuSelectionProtocol>menuSelectionDelegate;
+@property(nonatomic, weak) id<FTMenuSelectionProtocol>menuSelectionDelegate;
 @end

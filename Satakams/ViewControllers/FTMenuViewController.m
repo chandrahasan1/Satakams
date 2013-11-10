@@ -65,7 +65,6 @@
     if (mSelectDefaultRow) {
         mSelectDefaultRow = NO;
         [self.tableView selectRowAtIndexPath:mDefaultSelectedRowIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-        [self.menuSelectionDelegate selectedSatakmWithId:[[mSatakams objectAtIndex:0] satakamId]];
     }
 }
 

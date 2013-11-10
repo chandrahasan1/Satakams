@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FTMenuViewController.h"
+#import "FTMenuSelectionProtocol.h"
 
-@interface FTPoemsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate, MenuSelectionProtocol>
-@property (nonatomic, unsafe_unretained) NSInteger cellPrefix;
+@interface FTPoemsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate, FTMenuSelectionProtocol>
 @end

@@ -109,6 +109,7 @@
 		82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_portrait.png; sourceTree = "<group>"; };
 		82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_portrait@2x.png"; sourceTree = "<group>"; };
 		82021DC3180061650065F7A4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		829B320A182FB0A9007775F3 /* FTMenuSelectionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTMenuSelectionProtocol.h; sourceTree = "<group>"; };
 		82B75B141825018B0060B8AA /* FTPoemsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsCollectionViewController.h; sourceTree = "<group>"; };
 		82B75B151825018B0060B8AA /* FTPoemsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsCollectionViewController.m; sourceTree = "<group>"; };
 		82B75BAA182541AB0060B8AA /* FTPoemsVerticalFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsVerticalFlowLayout.h; sourceTree = "<group>"; };
@@ -217,8 +218,6 @@
 				18971A4418018AFD003DA5B4 /* FTMenuViewController.m */,
 				18971A4518018AFD003DA5B4 /* FTPoemsViewController.h */,
 				18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */,
-				18971A4718018AFD003DA5B4 /* FTViewController.h */,
-				18971A4818018AFD003DA5B4 /* FTViewController.m */,
 				82B75B141825018B0060B8AA /* FTPoemsCollectionViewController.h */,
 				82B75B151825018B0060B8AA /* FTPoemsCollectionViewController.m */,
 			);
@@ -268,6 +267,7 @@
 		18ECA82817FCB16D00C930FE /* Satakams */ = {
 			isa = PBXGroup;
 			children = (
+				829B3209182FB08A007775F3 /* Protocols */,
 				82B75B18182508B20060B8AA /* CollectionViewLayout */,
 				82B75B17182501D00060B8AA /* CollectionViewCells */,
 				18241D72180469E80019C34D /* Resources */,
@@ -309,6 +309,14 @@
 				82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		829B3209182FB08A007775F3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				829B320A182FB0A9007775F3 /* FTMenuSelectionProtocol.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		82B75B17182501D00060B8AA /* CollectionViewCells */ = {
@@ -483,7 +491,6 @@
 				82B75BB2182542240060B8AA /* FTPoemCollectionViewCell.m in Sources */,
 				18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */,
 				18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */,
-				18971A5018018AFD003DA5B4 /* FTViewController.m in Sources */,
 				82B75B161825018B0060B8AA /* FTPoemsCollectionViewController.m in Sources */,
 				18971A4C18018AFD003DA5B4 /* main.m in Sources */,
 				18971A5818029036003DA5B4 /* FTPoet.m in Sources */,
