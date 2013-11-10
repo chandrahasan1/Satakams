@@ -63,6 +63,7 @@
     if (self) {
         [self resetDatabaseFileForced:NO];
         self.databaseQueue = [FMDatabaseQueue databaseQueueWithPath:[self databaseFilePath]];
+#warning why are you creating the tables here?
         BOOL tableCreated = [self createTables];
         NSLog(@"tableCreated : %d", tableCreated);
         if (!tableCreated) {
