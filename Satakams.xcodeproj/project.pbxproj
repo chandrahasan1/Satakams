@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A02E1182D226C0097208A /* Ramaneeya.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181A02E0182D226C0097208A /* Ramaneeya.ttf */; };
 		18241D7418047D1B0019C34D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18241D7318047D1B0019C34D /* Main.storyboard */; };
 		18241D7618047F770019C34D /* ft.satakam.database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18241D7518047F770019C34D /* ft.satakam.database.sqlite */; };
 		187215FF182052CA0086CEBD /* Aadhi Bikshuvu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215F5182052CA0086CEBD /* Aadhi Bikshuvu.mp3 */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181A02E0182D226C0097208A /* Ramaneeya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramaneeya.ttf; sourceTree = "<group>"; };
 		18241D7318047D1B0019C34D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18241D7518047F770019C34D /* ft.satakam.database.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = ft.satakam.database.sqlite; sourceTree = "<group>"; };
 		187215F5182052CA0086CEBD /* Aadhi Bikshuvu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Aadhi Bikshuvu.mp3"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		18971A3E18018AFD003DA5B4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				181A02E0182D226C0097208A /* Ramaneeya.ttf */,
 				18971A5118018B0F003DA5B4 /* InfoPlist.strings */,
 				18971A3F18018AFD003DA5B4 /* main.m */,
 				18971A4018018AFD003DA5B4 /* Satakams-Info.plist */,
@@ -423,6 +426,7 @@
 				82021DC217FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png in Resources */,
 				18721605182052CA0086CEBD /* Paatallo.mp3 in Resources */,
 				18721603182052CA0086CEBD /* Flute Music.mp3 in Resources */,
+				181A02E1182D226C0097208A /* Ramaneeya.ttf in Resources */,
 				18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */,
 				18721602182052CA0086CEBD /* Ee Gaali Ee Vela.mp3 in Resources */,
 				187215FF182052CA0086CEBD /* Aadhi Bikshuvu.mp3 in Resources */,
@@ -615,8 +619,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Satakams/SupportingFiles//Satakams-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Satakams/SupportingFiles/Satakams-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "AC1613BD-7913-4438-A65D-AA6861DAB1D3";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -631,8 +637,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Satakams/SupportingFiles//Satakams-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Satakams/SupportingFiles/Satakams-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "AC1613BD-7913-4438-A65D-AA6861DAB1D3";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

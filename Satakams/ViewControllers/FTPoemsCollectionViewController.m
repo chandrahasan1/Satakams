@@ -12,10 +12,15 @@
 #import "FTPoem.h"
 #import "FTSatakam.h"
 #import "FTPoemsVerticalFlowLayout.h"
+#import "FTPoemsHoriontalFlowLayout.h"
 #import "FTPoemCollectionViewCell.h"
 
 @interface FTPoemsCollectionViewController ()
-@property(nonatomic, strong) NSArray *poems;
+{
+    __strong FTPoemsVerticalFlowLayout *portFlowLayout;
+    __strong FTPoemsHoriontalFlowLayout *landFlowLayout;
+}
+@property(nonatomic, strong) NSMutableArray *poems;
 @end
 
 @implementation FTPoemsCollectionViewController
@@ -23,14 +28,17 @@
 
 - (id)init
 {
-    FTPoemsVerticalFlowLayout *flowLayout = [[FTPoemsVerticalFlowLayout alloc] init];
-    self = [super initWithCollectionViewLayout:flowLayout];
+    portFlowLayout = [[FTPoemsVerticalFlowLayout alloc] init];
+    landFlowLayout = [[FTPoemsHoriontalFlowLayout alloc] init];
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    self = [super initWithCollectionViewLayout:UIInterfaceOrientationIsPortrait(interfaceOrientation)?portFlowLayout:landFlowLayout];
     if (self) {
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
-        self.collectionView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
         self.collectionView.backgroundColor = [UIColor whiteColor];
-        self.collectionView.alwaysBounceVertical = YES;
+        self.collectionView.alwaysBounceVertical = NO;
+        self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.bounces = NO;
     }
     return self;
 }
@@ -62,6 +70,29 @@
     [self selectedSatakmWithId:[[satakams objectAtIndex:0] satakamId]];
 }
 
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    [self.collectionView.collectionViewLayout invalidateLayout];
+    
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        //Changing to landscape
+        self.collectionView.collectionViewLayout = landFlowLayout;
+        self.collectionView.alwaysBounceVertical = NO;
+        self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.bounces = NO;
+    }
+    else {
+        //changing to portrait
+        self.collectionView.collectionViewLayout = portFlowLayout;
+        self.collectionView.alwaysBounceVertical = YES;
+        self.collectionView.alwaysBounceHorizontal = NO;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
+}
+
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     return mPoems.count;
@@ -72,11 +103,13 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FTPoemCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CellIdentifier" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor grayColor];
+    UICollectionViewCell *cell = nil;
+    cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     // Configure the cell...
+    cell.backgroundColor = [UIColor clearColor];
     FTPoem *poem = [mPoems objectAtIndex:indexPath.row];
-    cell.satakamTitle = [poem verse];
+    FTPoemCollectionViewCell *fCell = (FTPoemCollectionViewCell *)cell;
+    fCell.satakamTitle = [poem verse];
     return cell;
 }
 
@@ -89,6 +122,7 @@
 
 
 #pragma mark - Actions
+
 - (void)showLeftView:(id)sender
 {
     if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController)
@@ -101,11 +135,67 @@
     }
 }
 
+- (NSInteger)getCurrentPage
+{
+    NSInteger currentPage = 0;
+    NSInteger currentContentOffset = self.collectionView.contentOffset.x;
+    CGFloat pageWidth = 568;
+    NSInteger targetPageIndex = 0;
+    float offsetAtLastPage = pageWidth * ([mPoems count] -1);
+    if (currentContentOffset == offsetAtLastPage) {
+        targetPageIndex = 0;
+        [self scrollToTargetPage:targetPageIndex animated:NO];
+    } else if (self.collectionView.contentOffset.x == 0)  {
+        targetPageIndex = ([mPoems count] - 2 - 1); //last item
+        [self scrollToTargetPage:targetPageIndex animated:NO];
+    }
+    else {
+        targetPageIndex = floor((currentContentOffset - pageWidth) / pageWidth);
+    }
+    currentPage = targetPageIndex;
+    return currentPage;
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    [self scrollEnded];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if (decelerate == NO) {
+        [self scrollEnded];
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self scrollEnded];
+}
+- (void)scrollEnded {
+    [self getCurrentPage];
+}
+
+- (void)scrollToTargetPage:(NSInteger)target animated:(BOOL)animated updateUI:(BOOL)yn{
+    NSInteger scrollPageIndex = target;
+    scrollPageIndex = target + 1;
+    if ([mPoems count]>scrollPageIndex) {
+        float width = 568;
+        [self.collectionView setContentOffset:CGPointMake((scrollPageIndex*width), self.collectionView.contentOffset.y) animated:animated];
+        
+    }
+}
+
+- (void)scrollToTargetPage:(NSInteger)target animated:(BOOL)animated
+{
+    [self scrollToTargetPage:target animated:animated updateUI:YES];
+    
+}
+
 
 #pragma mark - Menu Selection Protocol methods
 
 - (void)selectedSatakmWithId:(NSString *)satakamId {
-    mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
+    NSArray *poems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
+    mPoems = [[NSMutableArray alloc] initWithArray:poems];
+    [mPoems addObject:poems.firstObject];
+    [mPoems insertObject:poems.lastObject atIndex:0];
     FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:satakamId];
     dispatch_async(dispatch_get_main_queue(), ^{
          self.title = satakam.satakamName;
@@ -114,7 +204,7 @@
 }
 
 - (void)selectedFav {
-    mPoems = [[FTDatabaseWrapper sharedInstance] allFavedPoems];
+    mPoems = [[NSMutableArray alloc] initWithArray:[[FTDatabaseWrapper sharedInstance] allFavedPoems]];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.title = @"Fav Poems";
         [self.collectionView reloadData];

@@ -8,7 +8,6 @@
 
 #import "FTPoemCollectionViewCell.h"
 
-
 @interface FTPoemCollectionViewCell()
 @property(nonatomic, strong)UILabel *myLabel;
 @end
@@ -23,8 +22,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        // TODO:Don't har code.
-        self.myLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 20)];
+        // TODO:Don't hard code.
+        self.myLabel = [[UILabel alloc] initWithFrame:self.bounds];
+        self.myLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.myLabel.font = [UIFont fontWithName:@"Ramaneeya" size:18.0];
+        self.myLabel.numberOfLines = 0;
+        self.myLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.myLabel];
     }
     return self;
@@ -34,15 +37,5 @@
 {
     self.myLabel.text = cellText;
 }
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
