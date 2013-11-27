@@ -20,7 +20,7 @@
     __strong FTPoemsVerticalFlowLayout *portFlowLayout;
     __strong FTPoemsHoriontalFlowLayout *landFlowLayout;
 }
-@property(nonatomic, strong) NSMutableArray *poems;
+@property(nonatomic, strong) NSArray *poems;
 @end
 
 @implementation FTPoemsCollectionViewController
@@ -36,22 +36,25 @@
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
         self.collectionView.backgroundColor = [UIColor whiteColor];
-        self.collectionView.alwaysBounceVertical = NO;
-        self.collectionView.alwaysBounceHorizontal = NO;
-        self.collectionView.bounces = NO;
+        if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+            //Changing to landscape
+            self.collectionView.collectionViewLayout = landFlowLayout;
+            self.collectionView.alwaysBounceVertical = NO;
+            self.collectionView.alwaysBounceHorizontal = YES;
+        }
+        else {
+            //changing to portrait
+            self.collectionView.collectionViewLayout = portFlowLayout;
+            self.collectionView.alwaysBounceVertical = YES;
+            self.collectionView.alwaysBounceHorizontal = NO;
+        }
+        self.collectionView.bounces = YES;
         self.collectionView.showsHorizontalScrollIndicator = NO;
     }
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
@@ -81,7 +84,6 @@
         self.collectionView.collectionViewLayout = landFlowLayout;
         self.collectionView.alwaysBounceVertical = NO;
         self.collectionView.alwaysBounceHorizontal = NO;
-        self.collectionView.bounces = NO;
     }
     else {
         //changing to portrait
@@ -94,11 +96,6 @@
     });
 }
 
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    if (UIInterfaceOrientationIsPortrait(fromInterfaceOrientation)) {
-        [self scrollEnded];
-    }
-}
 
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
@@ -157,68 +154,10 @@
     }
 }
 
-- (NSInteger)getCurrentPage
-{
-    NSInteger currentPage = 0;
-    NSInteger currentContentOffset = self.collectionView.contentOffset.x;
-    CGFloat pageWidth = 568;
-    NSInteger targetPageIndex = 0;
-    float offsetAtLastPage = pageWidth * ([mPoems count] -1);
-    if (currentContentOffset == offsetAtLastPage) {
-        targetPageIndex = 0;
-        [self scrollToTargetPage:targetPageIndex animated:NO];
-    } else if (self.collectionView.contentOffset.x == 0)  {
-        targetPageIndex = ([mPoems count] - 2 - 1); //last item
-        [self scrollToTargetPage:targetPageIndex animated:NO];
-    }
-    else {
-        targetPageIndex = floor((currentContentOffset - pageWidth) / pageWidth);
-        [self scrollToTargetPage:targetPageIndex animated:YES];
-    }
-    currentPage = targetPageIndex;
-    return currentPage;
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    [self scrollEnded];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    if (decelerate == NO) {
-        [self scrollEnded];
-    }
-}
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self scrollEnded];
-}
-- (void)scrollEnded {
-    [self getCurrentPage];
-}
-
-- (void)scrollToTargetPage:(NSInteger)target animated:(BOOL)animated updateUI:(BOOL)yn{
-    NSInteger scrollPageIndex = target;
-    scrollPageIndex = target + 1;
-    if ([mPoems count]>scrollPageIndex) {
-        float width = 568;
-        [self.collectionView setContentOffset:CGPointMake((scrollPageIndex*width), self.collectionView.contentOffset.y) animated:animated];
-        
-    }
-}
-
-- (void)scrollToTargetPage:(NSInteger)target animated:(BOOL)animated
-{
-    [self scrollToTargetPage:target animated:animated updateUI:YES];
-    
-}
-
-
 #pragma mark - Menu Selection Protocol methods
 
 - (void)selectedSatakmWithId:(NSString *)satakamId {
-    NSArray *poems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
-    mPoems = [[NSMutableArray alloc] initWithArray:poems];
-    [mPoems addObject:poems.firstObject];
-    [mPoems insertObject:poems.lastObject atIndex:0];
+    mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
     FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:satakamId];
     dispatch_async(dispatch_get_main_queue(), ^{
          self.title = satakam.satakamName;

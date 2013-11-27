@@ -1,8 +1,8 @@
 PODS:
-  - FMDB (2.0):
+  - FMDB (2.1):
     - FMDB/standard
-  - FMDB/common (2.0)
-  - FMDB/standard (2.0):
+  - FMDB/common (2.1)
+  - FMDB/standard (2.1):
     - FMDB/common
   - PKRevealController (1.0b2)
 
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - PKRevealController (~> 1.0b2)
 
 SPEC CHECKSUMS:
-  FMDB: 370eb54b9f057aa4de7cf9c757d103b21ee30ecc
+  FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
   PKRevealController: 631e6a3db833a0c660203c2dba0963109549ec8a
 
-COCOAPODS: 0.26.0
+COCOAPODS: 0.28.0
