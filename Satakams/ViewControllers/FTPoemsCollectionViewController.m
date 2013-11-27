@@ -39,6 +39,7 @@
         self.collectionView.alwaysBounceVertical = NO;
         self.collectionView.alwaysBounceHorizontal = NO;
         self.collectionView.bounces = NO;
+        self.collectionView.showsHorizontalScrollIndicator = NO;
     }
     return self;
 }
@@ -93,6 +94,12 @@
     });
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    if (UIInterfaceOrientationIsPortrait(fromInterfaceOrientation)) {
+        [self scrollEnded];
+    }
+}
+
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     return mPoems.count;
@@ -109,7 +116,22 @@
     cell.backgroundColor = [UIColor clearColor];
     FTPoem *poem = [mPoems objectAtIndex:indexPath.row];
     FTPoemCollectionViewCell *fCell = (FTPoemCollectionViewCell *)cell;
+    if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
+        fCell.style = kFTCollectionCellTypePort;
+    }
+    else {
+        fCell.style = kFTCollectionCellTypeLand;
+    }
     fCell.satakamTitle = [poem verse];
+    
+    if (indexPath.row == 0) {
+        fCell.tableCellType = FabSettingsTableCellTypeFirst;
+    }
+    else if([mPoems count]-1 == indexPath.row){
+        fCell.tableCellType = FabSettingsTableCellTypeLast;
+    }
+    else
+        fCell.tableCellType = FabSettingsTableCellTypeMiddle;
     return cell;
 }
 
@@ -151,6 +173,7 @@
     }
     else {
         targetPageIndex = floor((currentContentOffset - pageWidth) / pageWidth);
+        [self scrollToTargetPage:targetPageIndex animated:YES];
     }
     currentPage = targetPageIndex;
     return currentPage;
