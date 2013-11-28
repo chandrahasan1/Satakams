@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="2862" y="-295"/>
         </scene>
-        <!--Poems Collection View Controller - Vemana Satakam-->
+        <!--Poems Collection View Controller - Sumati Satakam-->
         <scene sceneID="Jgo-jC-eVq">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="jAM-Oz-xcG" customClass="FTPoemsCollectionViewController" sceneMemberID="viewController">
@@ -97,17 +97,17 @@
                             <outlet property="delegate" destination="jAM-Oz-xcG" id="bP0-ma-Vj4"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Vemana Satakam" id="4UQ-ck-aAe"/>
+                    <navigationItem key="navigationItem" title="Sumati Satakam" id="4UQ-ck-aAe"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GsW-ku-DyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2832" y="-1384"/>
         </scene>
-        <!--Navigation Controller - Vemana-->
+        <!--Navigation Controller - Sumati-->
         <scene sceneID="FOe-k4-bgP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mee-z1-wM3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Vemana" id="aXR-aL-cKg"/>
+                    <tabBarItem key="tabBarItem" title="Sumati" id="aXR-aL-cKg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vES-N4-Xpf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
