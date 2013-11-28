@@ -7,7 +7,6 @@
 //
 
 #import "FTPoemsCollectionViewController.h"
-#import "PKRevealController.h"
 #import "FTDatabaseWrapper.h"
 #import "FTPoem.h"
 #import "FTSatakam.h"
@@ -130,20 +129,6 @@
 }
 
 
-#pragma mark - Actions
-
-- (void)showLeftView:(id)sender
-{
-    if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController)
-    {
-        [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
-    }
-    else
-    {
-        [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
-    }
-}
-
 #pragma mark - Menu Selection Protocol methods
 
 - (void)selectedSatakmWithId:(NSString *)satakamId {
@@ -154,9 +139,9 @@
     [tempArray addObjectsFromArray:poems];
     [tempArray addObjectsFromArray:poems];
     mPoems = [NSArray arrayWithArray:tempArray];
-    FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:satakamId];
+    //FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:satakamId];
     dispatch_async(dispatch_get_main_queue(), ^{
-         self.title = satakam.satakamName;
+         //self.title = satakam.satakamName;
         [self.collectionView reloadData];
     });
 }
