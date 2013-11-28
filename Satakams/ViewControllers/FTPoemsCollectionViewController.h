@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FTMenuSelectionProtocol.h"
 
-@interface FTPoemsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate, FTMenuSelectionProtocol>
+@interface FTPoemsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 @end

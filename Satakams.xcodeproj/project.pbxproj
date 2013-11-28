@@ -26,8 +26,6 @@
 		18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */; };
 		18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */; };
 		18971A4C18018AFD003DA5B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3F18018AFD003DA5B4 /* main.m */; };
-		18971A4E18018AFD003DA5B4 /* FTMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4418018AFD003DA5B4 /* FTMenuViewController.m */; };
-		18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */; };
 		18971A5218018B0F003DA5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18971A5118018B0F003DA5B4 /* InfoPlist.strings */; };
 		18971A5518029027003DA5B4 /* FTPoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5418029027003DA5B4 /* FTPoem.m */; };
 		18971A5818029036003DA5B4 /* FTPoet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A5718029036003DA5B4 /* FTPoet.m */; };
@@ -90,10 +88,6 @@
 		18971A3F18018AFD003DA5B4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18971A4018018AFD003DA5B4 /* Satakams-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Satakams-Info.plist"; sourceTree = "<group>"; };
 		18971A4118018AFD003DA5B4 /* Satakams-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Satakams-Prefix.pch"; sourceTree = "<group>"; };
-		18971A4318018AFD003DA5B4 /* FTMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMenuViewController.h; sourceTree = "<group>"; };
-		18971A4418018AFD003DA5B4 /* FTMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMenuViewController.m; sourceTree = "<group>"; };
-		18971A4518018AFD003DA5B4 /* FTPoemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsViewController.h; sourceTree = "<group>"; };
-		18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsViewController.m; sourceTree = "<group>"; };
 		18971A5118018B0F003DA5B4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		18971A5318029027003DA5B4 /* FTPoem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoem.h; sourceTree = "<group>"; };
 		18971A5418029027003DA5B4 /* FTPoem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoem.m; sourceTree = "<group>"; };
@@ -117,7 +111,6 @@
 		82021DBD17FDF4930065F7A4 /* reveal_menu_icon_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reveal_menu_icon_portrait.png; sourceTree = "<group>"; };
 		82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal_menu_icon_portrait@2x.png"; sourceTree = "<group>"; };
 		82021DC3180061650065F7A4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		829B320A182FB0A9007775F3 /* FTMenuSelectionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTMenuSelectionProtocol.h; sourceTree = "<group>"; };
 		82B75B141825018B0060B8AA /* FTPoemsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsCollectionViewController.h; sourceTree = "<group>"; };
 		82B75B151825018B0060B8AA /* FTPoemsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemsCollectionViewController.m; sourceTree = "<group>"; };
 		82B75BAA182541AB0060B8AA /* FTPoemsVerticalFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemsVerticalFlowLayout.h; sourceTree = "<group>"; };
@@ -225,10 +218,6 @@
 		18971A4218018AFD003DA5B4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				18971A4318018AFD003DA5B4 /* FTMenuViewController.h */,
-				18971A4418018AFD003DA5B4 /* FTMenuViewController.m */,
-				18971A4518018AFD003DA5B4 /* FTPoemsViewController.h */,
-				18971A4618018AFD003DA5B4 /* FTPoemsViewController.m */,
 				82B75B141825018B0060B8AA /* FTPoemsCollectionViewController.h */,
 				82B75B151825018B0060B8AA /* FTPoemsCollectionViewController.m */,
 			);
@@ -278,7 +267,6 @@
 		18ECA82817FCB16D00C930FE /* Satakams */ = {
 			isa = PBXGroup;
 			children = (
-				829B3209182FB08A007775F3 /* Protocols */,
 				82B75B18182508B20060B8AA /* CollectionViewLayout */,
 				82B75B17182501D00060B8AA /* CollectionViewCells */,
 				18241D72180469E80019C34D /* Resources */,
@@ -320,14 +308,6 @@
 				82021DBE17FDF4930065F7A4 /* reveal_menu_icon_portrait@2x.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		829B3209182FB08A007775F3 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				829B320A182FB0A9007775F3 /* FTMenuSelectionProtocol.h */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		82B75B17182501D00060B8AA /* CollectionViewCells */ = {
@@ -503,7 +483,6 @@
 			files = (
 				18971A5518029027003DA5B4 /* FTPoem.m in Sources */,
 				82B75BB2182542240060B8AA /* FTPoemCollectionViewCell.m in Sources */,
-				18971A4F18018AFD003DA5B4 /* FTPoemsViewController.m in Sources */,
 				18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */,
 				82B75B161825018B0060B8AA /* FTPoemsCollectionViewController.m in Sources */,
 				18971A4C18018AFD003DA5B4 /* main.m in Sources */,
@@ -515,7 +494,6 @@
 				18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */,
 				18971A5B18029042003DA5B4 /* FTSatakam.m in Sources */,
 				82B75BAC182541AB0060B8AA /* FTPoemsVerticalFlowLayout.m in Sources */,
-				18971A4E18018AFD003DA5B4 /* FTMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

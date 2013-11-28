@@ -26,33 +26,28 @@
 @implementation FTPoemsCollectionViewController
 @synthesize poems = mPoems;
 
-- (id)init
+- (void)awakeFromNib
 {
     portFlowLayout = [[FTPoemsVerticalFlowLayout alloc] init];
     landFlowLayout = [[FTPoemsHoriontalFlowLayout alloc] init];
     UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    self = [super initWithCollectionViewLayout:UIInterfaceOrientationIsPortrait(interfaceOrientation)?portFlowLayout:landFlowLayout];
-    if (self) {
-        self.collectionView.dataSource = self;
-        self.collectionView.delegate = self;
-        if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
-            //Changing to landscape
-            self.collectionView.collectionViewLayout = landFlowLayout;
-            self.collectionView.alwaysBounceVertical = NO;
-            self.collectionView.alwaysBounceHorizontal = YES;
-            self.collectionView.backgroundColor = [UIColor whiteColor];
-        }
-        else {
-            //changing to portrait
-            self.collectionView.collectionViewLayout = portFlowLayout;
-            self.collectionView.alwaysBounceVertical = YES;
-            self.collectionView.alwaysBounceHorizontal = NO;
-            self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
-        }
-        self.collectionView.bounces = YES;
-        self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.collectionViewLayout = UIInterfaceOrientationIsPortrait(interfaceOrientation)?portFlowLayout:landFlowLayout;
+    if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        //Changing to landscape
+        self.collectionView.collectionViewLayout = landFlowLayout;
+        self.collectionView.alwaysBounceVertical = NO;
+        self.collectionView.alwaysBounceHorizontal = YES;
+        self.collectionView.backgroundColor = [UIColor whiteColor];
     }
-    return self;
+    else {
+        //changing to portrait
+        self.collectionView.collectionViewLayout = portFlowLayout;
+        self.collectionView.alwaysBounceVertical = YES;
+        self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
+    }
+    self.collectionView.bounces = YES;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
 }
 
 
@@ -62,13 +57,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.collectionView registerClass:[FTPoemCollectionViewCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
-    UIImage *revealImagePortrait = [UIImage imageNamed:@"reveal_menu_icon_portrait"];
-    UIImage *revealImageLandscape = [UIImage imageNamed:@"reveal_menu_icon_landscape"];
-    // TODO: Check why navigationController is nil.
-//    if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
-//    {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:revealImageLandscape style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
-//    }
     
     // Show poems of the first satakam.
     NSArray *satakams = [[FTDatabaseWrapper sharedInstance] allSatakams];
