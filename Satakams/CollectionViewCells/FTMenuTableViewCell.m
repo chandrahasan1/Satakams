@@ -1,53 +1,51 @@
 //
-//  FTPoemCollectionViewCell.m
+//  FTMenuTableViewCell.m
 //  Satakams
 //
-//  Created by FabNeeraj on 11/2/13.
+//  Created by Chandu on 11/28/13.
 //  Copyright (c) 2013 FT. All rights reserved.
 //
 
-#import "FTPoemCollectionViewCell.h"
+#import "FTMenuTableViewCell.h"
 
-@interface FTPoemCollectionViewCell()
+@interface FTMenuTableViewCell ()
 {
-    FTCollectionCellType mStyle;
-    
     __strong UIImageView *mTopSeperatorView;
     __strong UIImageView *mBottomSeperatorView;
-
 }
-@property(nonatomic, strong)UILabel *myLabel;
 @end
 
-@implementation FTPoemCollectionViewCell
-
-@synthesize satakamTitle = mCellText;
-@synthesize myLabel = mMyLabel;
-@synthesize style = mStyle;
+@implementation FTMenuTableViewCell
 @synthesize cellBackgroundColor;
 @synthesize tableCellType = mTableCellType;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
-        // TODO:Don't hard code.
-        self.backgroundColor = [UIColor whiteColor];
+        
         self.cellBackgroundColor = GREY_247;
         
-        self.myLabel = [[UILabel alloc] initWithFrame:CGRectOffset(self.bounds, 20, 0)];
-        self.myLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        self.myLabel.font = [UIFont fontWithName:@"Ramaneeya" size:18.0];
-        self.myLabel.numberOfLines = 1;
-        self.myLabel.textColor = GREY_51;
-        self.myLabel.textAlignment = NSTextAlignmentLeft;
-        self.myLabel.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.myLabel];
-        
-        
+        UIView *selectedView = [[UIView alloc] initWithFrame:self.bounds];
+        selectedView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        selectedView.backgroundColor = self.cellBackgroundColor;
+
         CGRect topSepFrame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
         CGRect bottomSepFrame = CGRectMake(0, CGRectGetHeight(self.bounds) - HALF_PIXEL_RETINA, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
+
+        UIImageView *imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, .5, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA)];
+        imgView.contentMode = UIViewContentModeScaleToFill;
+        imgView.backgroundColor = [UIColor colorWithRed:0.80f green:0.80f blue:0.80f alpha:1.00f];
+        [selectedView addSubview:imgView];
+        
+        UIImageView *imgViewBott  = [[UIImageView alloc] initWithFrame:bottomSepFrame];
+        imgViewBott.contentMode = UIViewContentModeScaleToFill;
+        imgViewBott.backgroundColor = [UIColor colorWithRed:0.80f green:0.80f blue:0.80f alpha:1.00f];
+        [selectedView addSubview:imgViewBott];
+        
+        self.selectedBackgroundView = selectedView;
+
+        
         
         mTopSeperatorView = [[UIImageView alloc] initWithFrame:topSepFrame];
         mTopSeperatorView.contentMode = UIViewContentModeScaleToFill;
@@ -62,10 +60,21 @@
     return self;
 }
 
-- (void)setSatakamTitle:(NSString *)cellText
-{
-    self.myLabel.text = cellText;
+#pragma mark -
+
+-(void)layoutSubviews {
+    
+    [super layoutSubviews];
+    CGRect topSepFrame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
+    CGRect bottomSepFrame = CGRectMake(0, CGRectGetHeight(self.bounds) - HALF_PIXEL_RETINA, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
+
+    [self bringSubviewToFront:mTopSeperatorView];
+    [self bringSubviewToFront:mBottomSeperatorView];
+    mTopSeperatorView.frame = topSepFrame;
+    mBottomSeperatorView.frame = bottomSepFrame;
 }
+
+#pragma mark -
 
 - (void)setTableCellType:(FabSettingsTableCellType)tablecellType {
     if (mTableCellType != tablecellType) {
@@ -101,62 +110,7 @@
     }
 }
 
-- (void)layoutSubviews {
-    
-    [super layoutSubviews];
-    
-    CGRect topSepFrame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
-    CGRect bottomSepFrame = CGRectMake(0, CGRectGetHeight(self.bounds) - HALF_PIXEL_RETINA, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
-    mTopSeperatorView.frame = topSepFrame;
-    mBottomSeperatorView.frame = bottomSepFrame;
-    
-    if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
-        self.myLabel.textAlignment = NSTextAlignmentLeft;
-        self.myLabel.numberOfLines = 1;
-        self.myLabel.frame = CGRectOffset(self.bounds, 20, 0);
-        switch (mTableCellType) {
-            case FabSettingsTableCellTypeMiddle:
-            {
-                mTopSeperatorView.hidden = YES;
-                mBottomSeperatorView.hidden = NO;
-            }
-                break;
-            case FabSettingsTableCellTypeFirst:
-            {
-                mTopSeperatorView.hidden = NO;
-                mBottomSeperatorView.hidden = NO;
-            }
-                break;
-            case FabSettingsTableCellTypeLast:
-            {
-                mTopSeperatorView.hidden = YES;
-                mBottomSeperatorView.hidden = NO;
-            }
-                break;
-            default:
-            {
-                mTopSeperatorView.hidden = YES;
-                mBottomSeperatorView.hidden = YES;
-            }
-                break;
-        }
-    }
-    else {
-        self.myLabel.textAlignment = NSTextAlignmentCenter;
-        self.myLabel.numberOfLines = 0;
-        self.myLabel.frame = CGRectOffset(self.bounds, 0, 0);
-        mTopSeperatorView.hidden = YES;
-        mBottomSeperatorView.hidden = YES;
-    }
-}
-
--(void)setStyle:(FTCollectionCellType)type {
-    mStyle = type;
-    [self setNeedsLayout];
-}
-
 #pragma mark -
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     self.backgroundColor = self.cellBackgroundColor;
@@ -187,5 +141,4 @@
 -(void)dealloc{
     self.cellBackgroundColor = nil;
 }
-
 @end

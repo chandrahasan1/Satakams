@@ -1,20 +1,18 @@
 //
-//  FTPoemCollectionViewCell.h
+//  FTMenuTableViewCell.h
 //  Satakams
 //
-//  Created by FabNeeraj on 11/2/13.
+//  Created by Chandu on 11/28/13.
 //  Copyright (c) 2013 FT. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FTPoemCollectionViewCell : UICollectionViewCell
-{
+@interface FTMenuTableViewCell : UITableViewCell {
     UIColor *cellBackgroundColor;
     FabSettingsTableCellType mTableCellType;
 }
-@property (nonatomic, strong)NSString *satakamTitle;
-@property (nonatomic, unsafe_unretained) FTCollectionCellType style;
+
 @property (nonatomic, strong) UIColor *cellBackgroundColor;
 @property (nonatomic, unsafe_unretained) FabSettingsTableCellType tableCellType;
 @end

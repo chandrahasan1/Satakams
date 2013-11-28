@@ -35,18 +35,19 @@
     if (self) {
         self.collectionView.dataSource = self;
         self.collectionView.delegate = self;
-        self.collectionView.backgroundColor = [UIColor whiteColor];
         if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
             //Changing to landscape
             self.collectionView.collectionViewLayout = landFlowLayout;
             self.collectionView.alwaysBounceVertical = NO;
             self.collectionView.alwaysBounceHorizontal = YES;
+            self.collectionView.backgroundColor = [UIColor whiteColor];
         }
         else {
             //changing to portrait
             self.collectionView.collectionViewLayout = portFlowLayout;
             self.collectionView.alwaysBounceVertical = YES;
             self.collectionView.alwaysBounceHorizontal = NO;
+            self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
         }
         self.collectionView.bounces = YES;
         self.collectionView.showsHorizontalScrollIndicator = NO;
@@ -84,12 +85,14 @@
         self.collectionView.collectionViewLayout = landFlowLayout;
         self.collectionView.alwaysBounceVertical = NO;
         self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.backgroundColor = [UIColor whiteColor];
     }
     else {
         //changing to portrait
         self.collectionView.collectionViewLayout = portFlowLayout;
         self.collectionView.alwaysBounceVertical = YES;
         self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView reloadData];
@@ -110,7 +113,6 @@
     UICollectionViewCell *cell = nil;
     cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     // Configure the cell...
-    cell.backgroundColor = [UIColor clearColor];
     FTPoem *poem = [mPoems objectAtIndex:indexPath.row];
     FTPoemCollectionViewCell *fCell = (FTPoemCollectionViewCell *)cell;
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
@@ -157,7 +159,13 @@
 #pragma mark - Menu Selection Protocol methods
 
 - (void)selectedSatakmWithId:(NSString *)satakamId {
-    mPoems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
+    NSArray *poems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
+    NSMutableArray *tempArray = [NSMutableArray array];
+    [tempArray addObjectsFromArray:poems];
+    [tempArray addObjectsFromArray:poems];
+    [tempArray addObjectsFromArray:poems];
+    [tempArray addObjectsFromArray:poems];
+    mPoems = [NSArray arrayWithArray:tempArray];
     FTSatakam *satakam = [[FTDatabaseWrapper sharedInstance] getSatakamWithId:satakamId];
     dispatch_async(dispatch_get_main_queue(), ^{
          self.title = satakam.satakamName;
@@ -168,7 +176,7 @@
 - (void)selectedFav {
     mPoems = [[NSMutableArray alloc] initWithArray:[[FTDatabaseWrapper sharedInstance] allFavedPoems]];
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.title = @"Fav Poems";
+        self.title = @"Faved";
         [self.collectionView reloadData];
     });
 }
