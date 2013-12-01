@@ -25,8 +25,11 @@
 - (NSArray *)allFavedPoems;
 - (BOOL)setFav:(BOOL)fav forPoemwithPoemId:(NSString *)poemId;
 - (id)getSatakamWithId:(NSString *)satakamId;
-
-// If forced is 'NO' then if sqlite file doesn't exist then it will copy file from bundle to user documents. If forced is 'YES'
-// then it will copy file from bundle to user documents.
+/**
+ *  If forced is 'YES' then it will replace the file in user documents with the one in bundle and set latest version (available in info.plist)
+ *  in user defaults.
+ *  If forced is 'NO' it will replace the file in user documents with bundle file only if file doesn't exist in documents or there is a version
+ *  mismatch.
+ */
 - (void)resetDatabaseFileForced:(BOOL)forced;
 @end

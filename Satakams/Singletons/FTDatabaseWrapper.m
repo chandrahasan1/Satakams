@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 FT. All rights reserved.
 //
 
-#define DATABASE_FILE_NAME @"ft.satakam.database.sqlite"
-
 #define CREATE_SATAKAMS_TABLE @"CREATE TABLE IF NOT EXISTS SATAKAMS(SID int, Name varchar(255), Bio varchar(255) , PRIMARY KEY (SID));"
 #define CREATE_POEMS_TABLE @"CREATE TABLE IF NOT EXISTS POEMS(PoemsID int, Verse varchar(255), Meaning varchar(255), AudioFile varchar(255), SID int, faved BOOLEAN, FOREIGN KEY (SID) REFERENCES SATAKAMS(SID), PRIMARY KEY (PoemsID));"
 #define CREATE_POETS_TABLE @"CREATE TABLE IF NOT EXISTS POETS(PoetsID int, Name varchar(255), Bio varchar(255), SID int, FOREIGN KEY (SID) REFERENCES SATAKAMS(SID), PRIMARY KEY (PoetsID));"
@@ -63,15 +61,6 @@
     if (self) {
         [self resetDatabaseFileForced:NO];
         self.databaseQueue = [FMDatabaseQueue databaseQueueWithPath:[self databaseFilePath]];
-#warning why are you creating the tables here?
-        BOOL tableCreated = [self createTables];
-        NSLog(@"tableCreated : %d", tableCreated);
-        if (!tableCreated) {
-            NSLog(@"PROBLEMS!!!!!! Tables not created!!");
-        }
-        else {
-            NSLog(@"Woo!!! Database and tables created successfully.");
-        }
     }
     return self;
 }
@@ -79,25 +68,32 @@
 - (void)resetDatabaseFileForced:(BOOL)forced {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *databaseFilePath = [self databaseFilePath];
+    NSString *currentDatabaseVersion = (NSString *)[FTConstants valueForInfoPlistKey:DATABASE_VERSION_KEY];
+    NSString *userDefaultsVersion = [(NSString *)[NSUserDefaults standardUserDefaults] valueForKey:DATABASE_VERSION_KEY];
+    BOOL fileExists =  fileExists = [fileManager fileExistsAtPath:databaseFilePath];
     if (!forced) {
-        BOOL fileExists = [fileManager fileExistsAtPath:databaseFilePath];
-        if (fileExists) {
-            NSLog(@"Database file already there not creating it.");
+        if (fileExists && [currentDatabaseVersion isEqualToString:userDefaultsVersion]) {
+            debugLog(@"Latest version Database file already there not copying it.");
             return;
         }
     }
     // Get the path to the database in the application package.
-    // TODO: Don't hard code the name of the file.
-    NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:@"ft.satakam.database" ofType:@"sqlite"];
+    NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:DATABASE_FILE_NAME ofType:@"sqlite"];
     
-    // Copy the database from the package to the users filesystem
+    // First remove the file if it exists and then copy the database from the package to the users filesystem
+    if (fileExists) {
+       [[NSFileManager defaultManager] removeItemAtPath:databaseFilePath error:nil];
+    }
     NSError *err = nil;
     [[NSFileManager defaultManager] copyItemAtPath:databasePathFromApp toPath:databaseFilePath error:&err];
     if (!err) {
-        NSLog(@"Database file successfully copied.");
+        debugLog(@"Database file successfully copied.");
+        // Update the version.
+        [[NSUserDefaults standardUserDefaults] setValue:currentDatabaseVersion forKey:DATABASE_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else {
-        NSLog(@"Database file copy failed with error description : %@", [err localizedDescription]);
+        debugLog(@"Database file copy failed with error description : %@", [err localizedDescription]);
     }
 }
 
@@ -111,7 +107,6 @@
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *baseDir = [paths objectAtIndex:0];
 	NSString *databaseName = DATABASE_FILE_NAME;
-	NSLog(@"Path for database : %@", [baseDir stringByAppendingPathComponent:databaseName]);
 	return [baseDir stringByAppendingPathComponent:databaseName];
 }
 
@@ -132,7 +127,7 @@
     __block BOOL success = NO;
     [mDatabaseQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         success = [db executeUpdateWithFormat:FAV_POEM_WITH_ID, fav,[poemId intValue]];
-        NSLog(@"%@", [db lastError]);
+        debugLog(@"%@", [db lastError]);
     }];
     return success;
 }

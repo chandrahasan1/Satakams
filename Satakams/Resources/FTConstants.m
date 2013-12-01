@@ -14,4 +14,12 @@
     return [UIColor colorWithRed:val/255.0f green:val/255.0f blue:val/255.0f alpha:1.0f];
 }
 
++(id)valueForInfoPlistKey:(NSString *)key {
+    if (!key) {
+        return nil;
+    }
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    return [mainBundle objectForInfoDictionaryKey:key];
+}
+
 @end
