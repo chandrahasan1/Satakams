@@ -36,27 +36,10 @@
 {
     portFlowLayout = [[FTPoemsVerticalFlowLayout alloc] init];
     landFlowLayout = [[FTPoemsHoriontalFlowLayout alloc] init];
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    self.collectionView.collectionViewLayout = UIInterfaceOrientationIsPortrait(interfaceOrientation)?portFlowLayout:landFlowLayout;
-    if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
-        //Changing to landscape
-        self.collectionView.collectionViewLayout = landFlowLayout;
-        self.collectionView.alwaysBounceVertical = NO;
-        self.collectionView.alwaysBounceHorizontal = YES;
-        self.collectionView.backgroundColor = [UIColor whiteColor];
-    }
-    else {
-        //changing to portrait
-        self.collectionView.collectionViewLayout = portFlowLayout;
-        self.collectionView.alwaysBounceVertical = YES;
-        self.collectionView.alwaysBounceHorizontal = NO;
-        self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
-    }
+    [self setCollectionViewLayoutBasedOnOrientation:[UIApplication sharedApplication].statusBarOrientation];
     self.collectionView.bounces = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
 }
-
-
 
 - (void)viewDidLoad
 {
@@ -73,21 +56,7 @@
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     [self.collectionView.collectionViewLayout invalidateLayout];
-    
-    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-        //Changing to landscape
-        self.collectionView.collectionViewLayout = landFlowLayout;
-        self.collectionView.alwaysBounceVertical = NO;
-        self.collectionView.alwaysBounceHorizontal = NO;
-        self.collectionView.backgroundColor = [UIColor whiteColor];
-    }
-    else {
-        //changing to portrait
-        self.collectionView.collectionViewLayout = portFlowLayout;
-        self.collectionView.alwaysBounceVertical = YES;
-        self.collectionView.alwaysBounceHorizontal = NO;
-        self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
-    }
+    [self setCollectionViewLayoutBasedOnOrientation:toInterfaceOrientation];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView reloadData];
     });
@@ -147,10 +116,11 @@
 }
 
 #pragma mark - Menu Selection Protocol methods
-
 - (void)selectedSatakmWithId:(NSString *)satakamId {
     NSArray *poems = [[FTDatabaseWrapper sharedInstance] allPoemsForSatakamsWithId:satakamId];
     NSMutableArray *tempArray = [NSMutableArray array];
+#warning Why are we doing addObjects 4 times?
+#warning Neeraj, Because I want to have more poems just to feel. Kaha Kaha se ata hai?
     [tempArray addObjectsFromArray:poems];
     [tempArray addObjectsFromArray:poems];
     [tempArray addObjectsFromArray:poems];
@@ -169,6 +139,26 @@
         self.title = @"Faved";
         [self.collectionView reloadData];
     });
+}
+
+#pragma mark CollectionViewLayout setter
+- (void)setCollectionViewLayoutBasedOnOrientation:(UIInterfaceOrientation)orientation {
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        //Changing to landscape
+        self.collectionView.collectionViewLayout = landFlowLayout;
+        self.collectionView.alwaysBounceVertical = NO;
+        self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.backgroundColor = [UIColor whiteColor];
+        // TODO: Should do proper calculations to set contentOffset.
+        [self.collectionView setContentOffset:CGPointMake(0, self.collectionView.contentOffset.y) animated:NO];
+    }
+    else {
+        //changing to portrait
+        self.collectionView.collectionViewLayout = portFlowLayout;
+        self.collectionView.alwaysBounceVertical = YES;
+        self.collectionView.alwaysBounceHorizontal = NO;
+        self.collectionView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.96f alpha:1.00f];
+    }
 }
 
 @end

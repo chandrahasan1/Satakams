@@ -16,13 +16,13 @@
     __strong UIImageView *mBottomSeperatorView;
 
 }
-@property(nonatomic, strong)UILabel *myLabel;
+@property(nonatomic, strong)UILabel *satakamTitleLabel;
 @end
 
 @implementation FTPoemCollectionViewCell
 
 @synthesize satakamTitle = mCellText;
-@synthesize myLabel = mMyLabel;
+@synthesize satakamTitleLabel = mSatakamTitleLabel;
 @synthesize style = mStyle;
 @synthesize cellBackgroundColor;
 @synthesize tableCellType = mTableCellType;
@@ -36,14 +36,14 @@
         self.backgroundColor = [UIColor whiteColor];
         self.cellBackgroundColor = GREY_247;
         
-        self.myLabel = [[UILabel alloc] initWithFrame:CGRectOffset(self.bounds, 20, 0)];
-        self.myLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        self.myLabel.font = [UIFont fontWithName:@"Ramaneeya" size:18.0];
-        self.myLabel.numberOfLines = 1;
-        self.myLabel.textColor = GREY_51;
-        self.myLabel.textAlignment = NSTextAlignmentLeft;
-        self.myLabel.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.myLabel];
+        self.satakamTitleLabel = [[UILabel alloc] initWithFrame:CGRectOffset(self.bounds, 20, 0)];
+        self.satakamTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.satakamTitleLabel.font = [UIFont fontWithName:@"Ramaneeya" size:18.0];
+        self.satakamTitleLabel.numberOfLines = 1;
+        self.satakamTitleLabel.textColor = GREY_51;
+        self.satakamTitleLabel.textAlignment = NSTextAlignmentLeft;
+        self.satakamTitleLabel.backgroundColor = [UIColor clearColor];
+        [self addSubview:self.satakamTitleLabel];
         
         
         CGRect topSepFrame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), HALF_PIXEL_RETINA);
@@ -64,7 +64,7 @@
 
 - (void)setSatakamTitle:(NSString *)cellText
 {
-    self.myLabel.text = cellText;
+    self.satakamTitleLabel.text = cellText;
 }
 
 - (void)setTableCellType:(FabSettingsTableCellType)tablecellType {
@@ -111,9 +111,9 @@
     mBottomSeperatorView.frame = bottomSepFrame;
     
     if (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)) {
-        self.myLabel.textAlignment = NSTextAlignmentLeft;
-        self.myLabel.numberOfLines = 1;
-        self.myLabel.frame = CGRectOffset(self.bounds, 20, 0);
+        self.satakamTitleLabel.textAlignment = NSTextAlignmentLeft;
+        self.satakamTitleLabel.numberOfLines = 1;
+        self.satakamTitleLabel.frame = CGRectOffset(self.bounds, 20, 0);
         switch (mTableCellType) {
             case FabSettingsTableCellTypeMiddle:
             {
@@ -142,9 +142,9 @@
         }
     }
     else {
-        self.myLabel.textAlignment = NSTextAlignmentCenter;
-        self.myLabel.numberOfLines = 0;
-        self.myLabel.frame = CGRectOffset(self.bounds, 0, 0);
+        self.satakamTitleLabel.textAlignment = NSTextAlignmentCenter;
+        self.satakamTitleLabel.numberOfLines = 0;
+        self.satakamTitleLabel.frame = CGRectOffset(self.bounds, 0, 0);
         mTopSeperatorView.hidden = YES;
         mBottomSeperatorView.hidden = YES;
     }
