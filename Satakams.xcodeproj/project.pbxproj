@@ -23,6 +23,7 @@
 		18721607182052CA0086CEBD /* Prakruthikanthaku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FD182052CA0086CEBD /* Prakruthikanthaku.mp3 */; };
 		18721608182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 187215FE182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 */; };
 		1872160B1820CC4F0086CEBD /* FTAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1872160A1820CC4F0086CEBD /* FTAudioManager.m */; };
+		1888E00918480EAA00E8CF00 /* FTPoemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888E00818480EAA00E8CF00 /* FTPoemDetailViewController.m */; };
 		18971A4A18018AFD003DA5B4 /* FTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */; };
 		18971A4B18018AFD003DA5B4 /* FTDatabaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3D18018AFD003DA5B4 /* FTDatabaseWrapper.m */; };
 		18971A4C18018AFD003DA5B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18971A3F18018AFD003DA5B4 /* main.m */; };
@@ -81,6 +82,8 @@
 		187215FE182052CA0086CEBD /* Vidhaatha Thalapuna.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Vidhaatha Thalapuna.mp3"; sourceTree = "<group>"; };
 		187216091820CC4F0086CEBD /* FTAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAudioManager.h; sourceTree = "<group>"; };
 		1872160A1820CC4F0086CEBD /* FTAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAudioManager.m; sourceTree = "<group>"; };
+		1888E00718480EAA00E8CF00 /* FTPoemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPoemDetailViewController.h; sourceTree = "<group>"; };
+		1888E00818480EAA00E8CF00 /* FTPoemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPoemDetailViewController.m; sourceTree = "<group>"; };
 		18971A3A18018AFD003DA5B4 /* FTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAppDelegate.h; sourceTree = "<group>"; };
 		18971A3B18018AFD003DA5B4 /* FTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAppDelegate.m; sourceTree = "<group>"; };
 		18971A3C18018AFD003DA5B4 /* FTDatabaseWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTDatabaseWrapper.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 			children = (
 				82B75B141825018B0060B8AA /* FTPoemsCollectionViewController.h */,
 				82B75B151825018B0060B8AA /* FTPoemsCollectionViewController.m */,
+				1888E00718480EAA00E8CF00 /* FTPoemDetailViewController.h */,
+				1888E00818480EAA00E8CF00 /* FTPoemDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				82B75B161825018B0060B8AA /* FTPoemsCollectionViewController.m in Sources */,
 				18971A4C18018AFD003DA5B4 /* main.m in Sources */,
 				185646D51846839100FF5FFE /* FTMenuTableViewCell.m in Sources */,
+				1888E00918480EAA00E8CF00 /* FTPoemDetailViewController.m in Sources */,
 				185646D81846843200FF5FFE /* FTConstants.m in Sources */,
 				18971A5818029036003DA5B4 /* FTPoet.m in Sources */,
 				82B75BAF182541C60060B8AA /* FTPoemsHoriontalFlowLayout.m in Sources */,

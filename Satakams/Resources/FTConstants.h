@@ -25,6 +25,23 @@ typedef enum {
     kFTCollectionCellTypeLand
 } FTCollectionCellType;
 
+
+
+
+
+
+
+
+
+#pragma mark -
+
+#define kFTSegueIdentiferDetail @"com.ft.poemDetail"
+
+
+
+
+
+
 @interface FTConstants : NSObject
 +(UIColor *)createRepeatedColor:(float)val;
 @end

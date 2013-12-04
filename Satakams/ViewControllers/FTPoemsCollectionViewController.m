@@ -13,6 +13,7 @@
 #import "FTPoemsVerticalFlowLayout.h"
 #import "FTPoemsHoriontalFlowLayout.h"
 #import "FTPoemCollectionViewCell.h"
+#import "FTPoemDetailViewController.h"
 
 @interface FTPoemsCollectionViewController ()
 {
@@ -24,6 +25,12 @@
 
 @implementation FTPoemsCollectionViewController
 @synthesize poems = mPoems;
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (void)awakeFromNib
 {
@@ -121,13 +128,23 @@
     return cell;
 }
 
+#pragma mark - UICollectionView Delegate Methods
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:kFTSegueIdentiferDetail sender:indexPath];
 }
 
+#pragma mark -
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:kFTSegueIdentiferDetail]) {
+        FTPoemDetailViewController *poemDetailViewController = (FTPoemDetailViewController *)segue.destinationViewController;
+        poemDetailViewController.currentIndexPath = sender;
+        poemDetailViewController.satakaPoems = mPoems;
+    }
+}
 
 #pragma mark - Menu Selection Protocol methods
 
